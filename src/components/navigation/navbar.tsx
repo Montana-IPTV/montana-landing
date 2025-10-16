@@ -18,6 +18,7 @@ import React, { useEffect, useState } from 'react';
 import MaxWidthWrapper from "../global/max-width-wrapper";
 import MobileNavbar from "./mobile-navbar";
 import AnimationContainer from "../global/animation-container";
+import Image from "next/image";
 
 const Navbar = () => {
 
@@ -42,16 +43,14 @@ const Navbar = () => {
 
     return (
         <header className={cn(
-            "sticky top-0 inset-x-0 h-14 w-full border-b border-transparent z-[99999] select-none",
+            "sticky top-0 inset-x-0 h-24 w-full border-b border-transparent z-[99999] select-none",
             scroll && "border-background/80 bg-background/40 backdrop-blur-md"
         )}>
             <AnimationContainer reverse delay={0.1} className="size-full">
                 <MaxWidthWrapper className="flex items-center justify-between">
-                    <div className="flex items-center space-x-12">
+                    <div className="flex items-center space-x-8">
                         <Link href="/#home">
-                            <span className="text-lg font-bold font-heading !leading-none">
-                                Linkify
-                            </span>
+                           <Image src="/logo.svg" alt="logo" width={166.27} height={45.39} className="w-[118px] h-[32px]" />
                         </Link>
 
                         <NavigationMenu className="hidden lg:flex">
@@ -123,9 +122,9 @@ const Navbar = () => {
                                 <Link href="/auth/sign-in" className={buttonVariants({ size: "sm", variant: "ghost" })}>
                                     Sign In
                                 </Link>
-                                <Link href="/auth/sign-up" className={buttonVariants({ size: "sm", })}>
+                                <Link href="/auth/sign-up" className={buttonVariants({ size: "sm", variant: "blue" })}>
                                     Get Started
-                                    <ZapIcon className="size-3.5 ml-1.5 text-orange-500 fill-orange-500" />
+                                    <ZapIcon className="size-3.5 ml-1.5 text-white fill-white" />
                                 </Link>
                             </div>
                         )}
