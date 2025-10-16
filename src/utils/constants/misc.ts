@@ -7,27 +7,27 @@ export const PAGINATION_LIMIT = 10;
 export const COMPANIES = [
     {
         name: "Asana",
-        logo: "/assets/company-01.svg",
+        logo: "/assets/brands/bein.svg",
     },
     {
         name: "Tidal",
-        logo: "/assets/company-02.svg",
+        logo: "/assets/brands/disney.svg",
     },
     {
         name: "Innovaccer",
-        logo: "/assets/company-03.svg",
+        logo: "/assets/brands/exxen.svg",
     },
     {
         name: "Linear",
-        logo: "/assets/company-04.svg",
+        logo: "/assets/brands/netflix.svg",
     },
     {
         name: "Raycast",
-        logo: "/assets/company-05.svg",
+        logo: "/assets/brands/prime.svg",
     },
     {
         name: "Labelbox",
-        logo: "/assets/company-06.svg",
+        logo: "/assets/brands/bein.svg",
     }
 ] as const;
 

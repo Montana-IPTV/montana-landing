@@ -13,7 +13,7 @@ const MarketingLayout = ({ children }: Props) => {
                 <Image src="/assets/movies-cards.png" alt="movies cards" quality={100} fill className="object-cover object-top opacity-90 dark:opacity-20" />
             </div>
             <Navbar />
-            <main className="mt-20 mx-auto w-full z-0 relative">
+            <main className="mt-24 mx-auto w-full z-0 relative">
                 {children}
             </main>
             <Footer />
