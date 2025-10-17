@@ -27,7 +27,7 @@ export const COMPANIES = [
     },
     {
         name: "Labelbox",
-        logo: "/assets/brands/bein.svg",
+        logo: "/assets/brands/ssport.svg",
     }
 ] as const;
 

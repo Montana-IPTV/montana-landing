@@ -24,7 +24,7 @@ const HomePage = async () => {
                 className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
                 <MaxWidthWrapper>
                     <div
-                        className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
+                        className="flex flex-col items-center justify-center w-full text-center">
                         <AnimationContainer className="flex flex-col items-center justify-center w-full text-center">
                             <h1 className="text-foreground text-center py-4 text-5xl font-bold tracking-normal text-balance sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] w-full font-heading">
                                 Tüm Platformlar <span
@@ -80,7 +80,7 @@ const HomePage = async () => {
                                                 width={80}
                                                 height={80}
                                                 quality={100}
-                                                className="w-28 h-14 object-contain"
+                                                className="w-32 h-[72px] object-contain"
                                             />
                                         </li>
                                     ))}
