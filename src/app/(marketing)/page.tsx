@@ -181,13 +181,13 @@ const HomePage = async () => {
         <AnimationContainer delay={0.1}>
           <div
             className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
-            <MagicBadge title="Our Customers"/>
+            <MagicBadge title="Sizden Gelenler"/>
             <h2
               className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
-              What our users are saying
+              Sizden Gelenler
             </h2>
             <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-              Here&apos;s what some of our users have to say about Linkify.
+              Gerçek deneyimler, samimi düşünceler. Ürünlerimizi en iyi anlatanlar sizsiniz.
             </p>
           </div>
         </AnimationContainer>
@@ -280,21 +280,21 @@ const HomePage = async () => {
       </MaxWidthWrapper>
 
       {/* CTA Section */}
-      <MaxWidthWrapper className="mt-20 max-w-[100vw] overflow-x-hidden scrollbar-hide">
+      <MaxWidthWrapper className="mt-20 max-w-[90vw] overflow-x-hidden scrollbar-hide">
         <AnimationContainer delay={0.1}>
           <LampContainer>
             <div className="flex flex-col items-center justify-center relative w-full text-center">
               <h2
-                className="bg-gradient-to-b from-neutral-200 to-neutral-400 py-4 bg-clip-text text-center text-4xl md:text-7xl !leading-[1.15] font-medium font-heading tracking-tight text-transparent mt-8">
-                Step into the future of link management
+                className="bg-gradient-to-b from-neutral-200 to-neutral-400 py-4 bg-clip-text text-center text-4xl md:text-7xl !leading-[1.15] font-medium font-heading tracking-tight text-transparent mt-2">
+                Diziler, Filmler ve Maçlar <br/> Hepsi Tek Yerde!
               </h2>
               <p className="text-muted-foreground mt-6 max-w-md mx-auto">
-                Experience the cutting-edge solution that transforms how you handle your links. Elevate
-                your online presence with our next-gen platform.
+                İstediğin ekranda, istediğin zaman izle.
+                Sınırsız eğlence her yerde seninle.
               </p>
               <div className="mt-6">
                 <Button>
-                  Get started for free
+                  Hesabını Oluştur
                   <ArrowRightIcon className="w-4 h-4 ml-2"/>
                 </Button>
               </div>

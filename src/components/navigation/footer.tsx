@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { AnimationContainer, Icons } from "@/components"
 import { TextHoverEffect } from "@/components/ui/text-hover-effect"
+import Image from "next/image";
+import React from "react";
 
 const Footer = () => {
     return (
@@ -13,14 +15,13 @@ const Footer = () => {
                 <AnimationContainer delay={0.1}>
                     <div className="flex flex-col items-start justify-start md:max-w-[200px]">
                         <div className="flex items-start">
-                            <Icons.logo className="w-7 h-7" />
+                          <Link href="/#home">
+                            <Image src="/logo.svg" alt="logo" width={166.27} height={45.39} className="w-[118px] h-[32px]" />
+                          </Link>
                         </div>
                         <p className="text-muted-foreground mt-4 text-sm text-start">
-                            Manage your links with ease.
+                            Bağlantılarınızı kolayca yönetin.
                         </p>
-                        <span className="mt-4 text-neutral-200 text-sm flex items-center">
-                            Made by <Link href="https://shreyas-sihasane.vercel.app/" className="font-semibold ml-1">Shreyas</Link>
-                        </span>
                     </div>
                 </AnimationContainer>
 
@@ -29,27 +30,27 @@ const Footer = () => {
                         <AnimationContainer delay={0.2}>
                             <div className="">
                                 <h3 className="text-base font-medium text-white">
-                                    Product
+                                    Ürün
                                 </h3>
                                 <ul className="mt-4 text-sm text-muted-foreground">
                                     <li className="mt-2">
                                         <Link href="" className="hover:text-foreground transition-all duration-300">
-                                            Features
+                                            Özellikler
                                         </Link>
                                     </li>
                                     <li className="mt-2">
                                         <Link href="" className="hover:text-foreground transition-all duration-300">
-                                            Pricing
+                                            Fiyatlandırma
                                         </Link>
                                     </li>
                                     <li className="mt-2">
                                         <Link href="" className="hover:text-foreground transition-all duration-300">
-                                            Testimonials
+                                            Müşteri Yorumları
                                         </Link>
                                     </li>
                                     <li className="mt-2">
                                         <Link href="" className="hover:text-foreground transition-all duration-300">
-                                            Integration
+                                            Entegrasyon
                                         </Link>
                                     </li>
                                 </ul>
@@ -58,7 +59,7 @@ const Footer = () => {
                         <AnimationContainer delay={0.3}>
                             <div className="mt-10 md:mt-0 flex flex-col">
                                 <h3 className="text-base font-medium text-white">
-                                    Integrations
+                                    Entegrasyonlar
                                 </h3>
                                 <ul className="mt-4 text-sm text-muted-foreground">
                                     <li className="">
@@ -89,7 +90,7 @@ const Footer = () => {
                         <AnimationContainer delay={0.4}>
                             <div className="">
                                 <h3 className="text-base font-medium text-white">
-                                    Resources
+                                    Kaynaklar
                                 </h3>
                                 <ul className="mt-4 text-sm text-muted-foreground">
                                     <li className="mt-2">
@@ -99,7 +100,7 @@ const Footer = () => {
                                     </li>
                                     <li className="mt-2">
                                         <Link href="/resources/help" className="hover:text-foreground transition-all duration-300">
-                                            Support
+                                            Destek
                                         </Link>
                                     </li>
                                 </ul>
@@ -108,22 +109,22 @@ const Footer = () => {
                         <AnimationContainer delay={0.5}>
                             <div className="mt-10 md:mt-0 flex flex-col">
                                 <h3 className="text-base font-medium text-white">
-                                    Company
+                                    Şirket
                                 </h3>
                                 <ul className="mt-4 text-sm text-muted-foreground">
                                     <li className="">
                                         <Link href="" className="hover:text-foreground transition-all duration-300">
-                                            About Us
+                                            Hakkımızda
                                         </Link>
                                     </li>
                                     <li className="mt-2">
                                         <Link href="/privacy" className="hover:text-foreground transition-all duration-300">
-                                            Privacy Policy
+                                            Gizlilik Politikası
                                         </Link>
                                     </li>
                                     <li className="mt-2">
                                         <Link href="/terms" className="hover:text-foreground transition-all duration-300">
-                                            Terms & Conditions
+                                            Şartlar ve Koşullar
                                         </Link>
                                     </li>
                                 </ul>
@@ -137,13 +138,13 @@ const Footer = () => {
             <div className="mt-8 border-t border-border/40 pt-4 md:pt-8 md:flex md:items-center md:justify-between w-full">
                 <AnimationContainer delay={0.6}>
                     <p className="text-sm text-muted-foreground mt-8 md:mt-0">
-                        &copy; {new Date().getFullYear()} Linkify INC. All rights reserved.
+                        &copy; {new Date().getFullYear()} Montana INC. Tüm hakları saklıdır.
                     </p>
                 </AnimationContainer>
             </div>
 
-            <div className="h-[20rem] lg:h-[20rem] hidden md:flex items-center justify-center">
-                <TextHoverEffect text="LINKIFY" />
+            <div className="h-[18rem] lg:h-[18rem] hidden md:flex items-center justify-center">
+                <TextHoverEffect text="Montana" />
             </div>
         </footer>
     )
