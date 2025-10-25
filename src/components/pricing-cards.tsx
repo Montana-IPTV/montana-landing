@@ -29,7 +29,7 @@ const PricingCards = () => {
           )}
         >
           <CardHeader className={cn(
-            "border-b border-border",
+            "border-b border-border rounded-tr-xl rounded-tl-xl",
             plan.name === "Pro" ? "bg-[#1E7ED6]/[0.07]" : "bg-foreground/[0.03]"
           )}>
             <CardTitle className={cn(plan.name !== "Pro" && "text-muted-foreground", "text-lg font-medium")}>
@@ -54,7 +54,7 @@ const PricingCards = () => {
             <Link
               href={plan.btn.href}
               style={{width: "100%"}}
-              className={buttonVariants({className: plan.name === "Hepsi Bir Arada" && "bg-blue-600 hover:bg-blue-600/80 text-white"})}
+              className={buttonVariants({className: plan.name === "Hepsi Bir Arada" && "!bg-blue-600 hover:!bg-blue-600/80 text-white"})}
             >
               {plan.btn.text}
             </Link>
