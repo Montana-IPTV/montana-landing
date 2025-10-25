@@ -2,7 +2,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { cn } from "@/utils";
-import { ArrowRightIcon, CalendarIcon, Link2Icon, SearchIcon, WaypointsIcon } from "lucide-react";
+import { ArrowRightIcon, CalendarIcon, Link2Icon, SearchIcon, WaypointsIcon, Tv, LucideLaptopMinimal } from "lucide-react";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./card";
@@ -12,9 +12,9 @@ import { Label } from "./label";
 
 export const CARDS = [
     {
-        Icon: Link2Icon,
-        name: "Shorten links",
-        description: "Create short links that are easy to remember and share.",
+        Icon: Tv,
+        name: "Büyük ekranda keyif",
+        description: "Filmleri, dizileri ve maçları sinema kalitesinde izle.",
         href: "#",
         cta: "Learn more",
         className: "col-span-3 lg:col-span-1",
@@ -42,9 +42,9 @@ export const CARDS = [
         ),
     },
     {
-        Icon: SearchIcon,
-        name: "Search your links",
-        description: "Quickly find the links you need with AI-powered search.",
+        Icon: LucideLaptopMinimal,
+        name: "Çalışırken bile eğlence seninle",
+        description: "Web tarayıcından anında giriş yap, favori içeriklerini keşfet.",
         href: "#",
         cta: "Learn more",
         className: "col-span-3 lg:col-span-2",
@@ -64,8 +64,8 @@ export const CARDS = [
     },
     {
         Icon: WaypointsIcon,
-        name: "Connect your apps",
-        description: "Integrate with your favorite apps and services.",
+        name: "Taşınabilir konfor",
+        description: "Ekranı döndür, dizi maratonuna dilediğin yerde devam et.",
         href: "#",
         cta: "Learn more",
         className: "col-span-3 lg:col-span-2 max-w-full overflow-hidden",
@@ -75,8 +75,8 @@ export const CARDS = [
     },
     {
         Icon: CalendarIcon,
-        name: "Calendar",
-        description: "Keep track of your links with our calendar view.",
+        name: "Her an yanında",
+        description: "Yolda, kafede veya molada — tek dokunuşla izlemeye başla.",
         className: "col-span-3 lg:col-span-1",
         href: "#",
         cta: "Learn more",
