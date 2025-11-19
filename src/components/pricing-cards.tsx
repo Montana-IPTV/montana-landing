@@ -9,6 +9,7 @@ import {motion} from "framer-motion";
 import {CheckCircleIcon} from "lucide-react";
 import Link from "next/link";
 import {useState} from 'react';
+import Image from "next/image";
 
 type Tab = "monthly" | "yearly";
 
@@ -32,9 +33,10 @@ const PricingCards = () => {
             "border-b border-border rounded-tr-xl rounded-tl-xl",
             plan.name === "Pro" ? "bg-[#1E7ED6]/[0.07]" : "bg-foreground/[0.03]"
           )}>
-            <CardTitle className={cn(plan.name !== "Pro" && "text-muted-foreground", "text-lg font-medium")}>
-              {plan.name}
-            </CardTitle>
+            <Image src={plan.logo} alt={plan.name} width={1920} height={682} className="h-14 w-fit object-contain"/>
+            <span className="text-sm text-indigo-50/60 mt-4 mb-2">
+              {plan.text}
+            </span>
             <h5 className="text-3xl font-semibold">
               {plan.price.monthly}
               <span className="text-base text-muted-foreground font-normal">

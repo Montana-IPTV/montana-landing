@@ -99,88 +99,101 @@
 
 // export const WORKSPACE_LIMIT = 2;
 export const PLANS = [
-    {
-        name: "Canlı Yayın Paketi",
-        price: {
-            monthly: 79.90,
-            yearly: 0,
-        },
-        features: [
-            { text: "Limitsiz" },
-            { text: "1400+ Platform+" },
-            { text: "Canlı Yayın keyfi" }
-        ],
-        btn: {
-            text: "Paketi İncele",
-            href: "/auth/sign-up?plan=free",
-            variant: "default",
-        }
+  {
+    logo: "/logo-sports.svg",
+    name: "Montana Sports",
+    text: "Tüm Spor Yayınları",
+    price: {
+      monthly: 299.90,
+      yearly: 0,
     },
-    {
-        name: "Hepsi Bir Arada",
-        price: {
-            monthly: 119.90,
-            yearly: Math.round(9 * 12 * (1 - 0.12)),
-        },
-        features: [
-          { text: "Limitsiz" },
-          { text: "1400+ Platform+" },
-          { text: "Canlı Yayın keyfi" }
-        ],
-        btn: {
-            text: "Paketi İncele",
-            href: "/auth/sign-up?plan=pro",
-            variant: "purple",
-        }
-    },
-    {
-        name: "Dizi & Film Paketi",
-        price: {
-            monthly: 79.90,
-            yearly: Math.round(49 * 12 * (1 - 0.12)),
-        },
-        features: [
-          { text: "Limitsiz" },
-          { text: "1400+ Platform+" },
-          { text: "Canlı Yayın keyfi" }
-        ],
-        btn: {
-            text: "Paketi İncele",
-            href: "/auth/sign-up?plan=business",
-            variant: "default",
-        }
+    features: [
+      {text: "500+ Canlı Kanal"},
+      {text: "Dünya & Yerel Kanallar"},
+      {text: "Spor Yayınları"},
+      {text: "HD/FHD/4K Kalite"},
+      {text: "7/24 Destek"}
+    ],
+    btn: {
+      text: "Paketi İncele",
+      href: "/auth/sign-up?plan=sports",
+      variant: "default",
     }
+  },
+  {
+    logo: "/logo-cinema.svg",
+    name: "Montana Cinema",
+    text: "Tüm Spor Yayınları",
+    price: {
+      monthly: 349.90,
+      yearly: 0,
+    },
+    features: [
+      {text: "15000+ Film & Dizi"},
+      {text: "Yeni Çıkan Yapımlar"},
+      {text: "Tüm Kategoriler"},
+      {text: "HD/FHD/4K Kalite"},
+      {text: "7/24 Destek"}
+    ],
+    btn: {
+      text: "Paketi İncele",
+      href: "/auth/sign-up?plan=cinema",
+      variant: "default",
+    }
+  },
+  {
+    logo: "/logo-max.svg",
+    name: "Montana Max",
+    text: "Tüm Spor Yayınları",
+    popular: true,
+    price: {
+      monthly: 499.90,
+      yearly: 0,
+    },
+    features: [
+      {text: "Tüm Kanallar & İçerikler"},
+      {text: "Canlı TV + Film + Dizi"},
+      {text: "15000+ İçerik Kütüphanesi"},
+      {text: "HD/FHD/4K Kalite"},
+      {text: "Öncelikli Destek"}
+    ],
+    btn: {
+      text: "Paketi İncele",
+      href: "/auth/sign-up?plan=max",
+      variant: "default",
+    }
+  }
 ];
 
 export const PRICING_FEATURES = [
-    {
-        text: "Shorten links",
-        tooltip: "Create shortened links",
-    },
-    {
-        text: "Track clicks",
-        tooltip: "Track clicks on your links",
-    },
-    {
-        text: "See top countries",
-        tooltip: "See top countries where your links are clicked",
-    },
-    {
-        text: "Upto 10 tags",
-        tooltip: "Add upto 10 tags to your links",
-    },
-    {
-        text: "Community support",
-        tooltip: "Community support is available for free users",
-    },
-    {
-        text: "Priority support",
-        tooltip: "Get priority support from our team",
-    },
-    {
-        text: "AI powered suggestions",
-        tooltip: "Get AI powered suggestions for your links",
-    },
+  {
+    text: "Shorten links",
+    tooltip: "Create shortened links",
+  },
+  {
+    text: "Track clicks",
+    tooltip: "Track clicks on your links",
+  },
+  {
+    text: "See top countries",
+    tooltip: "See top countries where your links are clicked",
+  },
+  {
+    text: "Upto 10 tags",
+    tooltip: "Add upto 10 tags to your links",
+  },
+  {
+    text: "Community support",
+    tooltip: "Community support is available for free users",
+  },
+  {
+    text: "Priority support",
+    tooltip: "Get priority support from our team",
+  },
+  {
+    text: "AI powered suggestions",
+    tooltip: "Get AI powered suggestions for your links",
+  },
 ];
 
 export const WORKSPACE_LIMIT = 2;
