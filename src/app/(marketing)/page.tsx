@@ -43,7 +43,7 @@ const HomePage = async () => {
 
         <AnimationContainer
           delay={0.2}
-          className="relative pt-4 md:pt-12 pb-8 sm:pb-14 md:pb-16 px-2 w-full flex items-center justify-center"
+          className="relative pt-4 md:pt-12 sm:pb-14 md:pb-16 px-2 w-full flex items-center justify-center"
         >
           <div
             className="absolute top-[25%] left-1/2 gradient w-[80%] sm:w-2/3 md:w-2/5 -translate-x-1/2 h-[20%] sm:h-[25%] md:h-[30%] blur-[9rem] animate-image-glow"
@@ -63,7 +63,7 @@ const HomePage = async () => {
       {/* Companies Section */}
       <MaxWidthWrapper>
         <AnimationContainer delay={0.4}>
-          <div className="py-14 scroll-mt-40" id="companies">
+          <div className="py-4 md:py-14 scroll-mt-40" id="companies">
             <div className="mx-auto px-4 md:px-8">
               <h2 className="text-center text-sm font-medium font-heading text-neutral-400 uppercase">
                 Tüm Yayın Platformları ve Spor Kanalları Tek Yerde!
@@ -90,11 +90,11 @@ const HomePage = async () => {
       </MaxWidthWrapper>
 
       {/* Pricing Section */}
-      <MaxWidthWrapper className="py-10">
+      <MaxWidthWrapper className="py-12 md:py-10">
         <AnimationContainer delay={0.1}>
           <div
             id="pricing"
-            className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto scroll-mt-[100px]">
+            className="flex flex-col items-center lg:items-center justify-center w-full py-2 md:py-8 max-w-xl mx-auto scroll-mt-[100px]">
             <MagicBadge title="Planlar"/>
             <h2
               className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
