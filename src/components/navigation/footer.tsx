@@ -135,16 +135,12 @@ const Footer = () => {
 
             </div>
 
-            <div className="mt-8 border-t border-border/40 pt-4 md:pt-8 md:flex md:items-center md:justify-between w-full">
+            <div className="mt-8 mb-6 border-t border-border/40 pt-4 md:pt-8 md:flex md:items-center md:justify-between w-full">
                 <AnimationContainer delay={0.6}>
                     <p className="text-sm text-muted-foreground mt-8 md:mt-0">
                         &copy; {new Date().getFullYear()} Montana INC. Tüm hakları saklıdır.
                     </p>
                 </AnimationContainer>
-            </div>
-
-            <div className="h-[18rem] lg:h-[18rem] hidden md:flex items-center justify-center">
-                <TextHoverEffect text="Montana" />
             </div>
         </footer>
     )

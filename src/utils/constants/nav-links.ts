@@ -1,10 +1,12 @@
+import { HelpCircleIcon, LineChartIcon, Link2Icon, LockIcon, NewspaperIcon, QrCodeIcon } from "lucide-react";
+
 export const NAV_LINKS = [
+    {
+        title: "Planlar",
+        href: "#pricing",
+    },
   {
-    title: "Pricing",
-    href: "#pricing",
-  },
-  {
-    title: "Enterprise",
-    href: "/enterprise",
+    title: "Platformlar",
+    href: "#platforms",
   },
 ];

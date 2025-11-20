@@ -112,23 +112,11 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:flex items-center">
-            {user ? (
-              <div className="flex items-center">
-                <Link href="/dashboard" className={buttonVariants({size: "sm",})}>
-                  Dashboard
-                </Link>
-              </div>
-            ) : (
-              <div className="flex items-center gap-x-4">
-                <Link href="/auth/sign-in" className={buttonVariants({size: "sm", variant: "ghost"})}>
-                  Sign In
-                </Link>
-                <Link href="/auth/sign-up" className={buttonVariants({size: "sm", variant: "blue"})}>
-                  Get Started
-                  <ZapIcon className="size-3.5 ml-1.5 text-white fill-white"/>
-                </Link>
-              </div>
-            )}
+            <div className="flex items-center gap-x-4">
+              <Link href="/auth/sign-up" className={buttonVariants({variant: "blue"})}>
+                İletişim
+              </Link>
+            </div>
           </div>
 
           <MobileNavbar/>

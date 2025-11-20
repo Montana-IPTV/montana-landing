@@ -99,7 +99,8 @@ const HomePage = async () => {
       <MaxWidthWrapper className="py-10">
         <AnimationContainer delay={0.1}>
           <div
-            className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
+            id="pricing"
+            className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto scroll-mt-[100px]">
             <MagicBadge title="Simple Pricing"/>
             <h2
               className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
@@ -118,8 +119,10 @@ const HomePage = async () => {
       {/* Features Section */}
       <MaxWidthWrapper className="pt-10">
         <AnimationContainer delay={0.1}>
-          <div className="flex flex-col w-full items-center lg:items-center justify-center py-8">
-            <MagicBadge title="Features"/>
+          <div
+            id="platforms"
+            className="flex flex-col w-full items-center lg:items-center justify-center py-8 scroll-mt-[120px]">
+            <MagicBadge title="Platformlar"/>
             <h2
               className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
               İstediğiniz şekilde İzleyin
@@ -153,11 +156,11 @@ const HomePage = async () => {
             </p>
           </div>
         </AnimationContainer>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-start gap-4 md:gap-8 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 py-10">
           {REVIEWS.slice(0, 3).map((review, index) => (
             <AnimationContainer delay={0.2 * index} key={index}>
               <MagicCard key={index} className="md:p-0 h-full">
-                <Card className="flex flex-col w-full border-none">
+                <Card className="flex flex-col w-full border-none h-full">
                   <CardHeader className="space-y-0">
                     <CardTitle className="text-lg font-medium text-muted-foreground">
                       {review.name}
@@ -242,17 +245,18 @@ const HomePage = async () => {
       {/* SaaS OTT Builder Section */}
       <MaxWidthWrapper className="py-8">
         <AnimationContainer delay={0.1}>
-          <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center rounded-3xl bg-card ring-1 ring-border p-6 sm:p-10 md:p-14">
+          <section
+            className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center rounded-3xl bg-card ring-1 ring-border px-6 py-8">
             {/* Left: Copy */}
             <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
                 Kendi Netflix’inizi Kurmak İster misiniz?
               </h2>
               <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
                 Tamamen size özel tasarım, güçlü altyapı ve yüksek trafikli yayın sunucularıyla
                 kendi Netflix tarzı platformunuzu birkaç gün içinde yayına almanızı sağlıyoruz.
               </p>
-              <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm sm:text-base text-muted-foreground">
+              <ul className="mt-6 grid grid-cols-1 gap-3 text-sm sm:text-base text-muted-foreground">
                 <li className="flex items-start gap-3">
                   <span className="mt-1.5 size-2.5 rounded-full bg-primary"></span>
                   <span>Hazır altyapı — hızlı kurulum</span>
@@ -272,7 +276,7 @@ const HomePage = async () => {
               </ul>
               <div className="pt-2">
                 <Button asChild variant="blue" size="lg">
-                  <Link href={"/contact"}>Bizimle Çalışmak İstiyorum</Link>
+                  <Link href={"/contact"}>Bizimle Çalış</Link>
                 </Button>
                 <p className="text-xs sm:text-sm text-muted-foreground mt-3">
                   İletişim bilgilerinizi bırakın, ekibimiz en kısa sürede dönüş yapsın.
@@ -282,60 +286,8 @@ const HomePage = async () => {
 
             {/* Right: Multi-device Mockup */}
             <div className="relative w-full">
-              <div className="absolute -inset-6 -z-10 bg-gradient-to-b from-primary/20 via-transparent to-transparent blur-2xl rounded-3xl"/>
-              <div className="relative aspect-[16/10] w-full">
-                {/* TV */}
-                <div className="absolute inset-0 mx-auto rounded-2xl bg-muted/20 ring-1 ring-border overflow-hidden">
-                  <div className="h-8 w-full bg-neutral-800/80 flex items-center gap-2 px-3">
-                    <span className="size-2 rounded-full bg-neutral-600"/>
-                    <span className="size-2 rounded-full bg-neutral-600"/>
-                    <span className="size-2 rounded-full bg-neutral-600"/>
-                    <div className="ml-auto h-3 w-24 rounded bg-neutral-700"/>
-                  </div>
-                  <div className="p-4 sm:p-6 grid grid-cols-3 gap-2 sm:gap-3">
-                    {Array.from({ length: 9 }).map((_, i) => (
-                      <div key={i} className="aspect-[16/9] rounded-lg bg-gradient-to-br from-neutral-700 to-neutral-800 relative overflow-hidden">
-                        <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_30%_20%,#ffffff33,transparent_35%)]"/>
-                        <div className="absolute bottom-0 left-0 right-0 p-2">
-                          <div className="h-2 w-2/3 rounded bg-white/20"/>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 h-3 w-40 rounded-b-xl bg-neutral-900/90"/>
-
-                {/* Tablet */}
-                <div className="absolute right-2 -bottom-6 sm:right-6 sm:-bottom-10 w-40 sm:w-48 md:w-56 aspect-[3/4] rounded-2xl bg-muted/20 ring-1 ring-border overflow-hidden">
-                  <div className="h-6 w-full flex items-center justify-center">
-                    <div className="h-1 w-16 rounded-full bg-neutral-700"/>
-                  </div>
-                  <div className="p-3 grid grid-cols-2 gap-2">
-                    {Array.from({ length: 6 }).map((_, i) => (
-                      <div key={i} className="aspect-[4/3] rounded-md bg-neutral-800 relative overflow-hidden">
-                        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_70%_30%,#ffffff40,transparent_45%)]"/>
-                        <div className="absolute bottom-0 left-0 right-0 p-1.5">
-                          <div className="h-1.5 w-1/2 rounded bg-white/15"/>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Mobile */}
-                <div className="absolute left-2 -bottom-6 sm:left-6 sm:-bottom-10 w-20 sm:w-24 md:w-28 aspect-[9/19] rounded-[1.4rem] bg-muted/20 ring-1 ring-border overflow-hidden">
-                  <div className="h-5"/>
-                  <div className="px-2 grid grid-cols-1 gap-1.5">
-                    <div className="aspect-[16/9] rounded-md bg-neutral-800"/>
-                    <div className="h-2 w-3/4 rounded bg-white/15"/>
-                    <div className="grid grid-cols-3 gap-1.5">
-                      {Array.from({ length: 6 }).map((_, i) => (
-                        <div key={i} className="aspect-square rounded bg-neutral-800"/>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 h-6 w-20 rounded-full bg-neutral-800"/>
-                </div>
+              <div className="w-full flex items-center justify-center">
+                <Image className="object-contain" src="/assets/home/partnership.png" alt="partnership" width={2658} height={1803} />
               </div>
             </div>
           </section>
@@ -345,27 +297,28 @@ const HomePage = async () => {
       {/* CTA Section */}
       <MaxWidthWrapper className="mt-40 mb-40 max-w-[90vw] overflow-x-hidden scrollbar-hide">
         <AnimationContainer delay={0.1}>
-          <LampContainer />
-            <div className="flex flex-col items-center justify-center relative w-full text-center -mt-[180px]">
-              <div className="flex flex-col items-center justify-center w-full">
-                <h2 className="mt-6 text-2xl font-semibold text-center lg:text-3xl xl:text-4xl">
-                  Frequently Asked Questions
-                </h2>
-                <p className="max-w-lg mt-6 text-center text-neutral-500">
-                  Here are some of the most common questions we get asked. If you have a question that isn&apos;t answered here, feel free to reach out to us.
-                </p>
-              </div>
-              <div className="max-w-3xl mx-auto w-full mt-20">
-                <Accordion type="single" collapsible>
-                  {FAQ.map((faq) => (
-                    <AccordionItem key={faq.id} value={faq.id}>
-                      <AccordionTrigger>{faq.question}</AccordionTrigger>
-                      <AccordionContent>{faq.answer}</AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </div>
+          <LampContainer/>
+          <div className="flex flex-col items-center justify-center relative w-full text-center -mt-[180px]">
+            <div className="flex flex-col items-center justify-center w-full">
+              <h2 className="mt-6 text-2xl font-semibold text-center lg:text-3xl xl:text-4xl">
+                Frequently Asked Questions
+              </h2>
+              <p className="max-w-lg mt-6 text-center text-neutral-500">
+                Here are some of the most common questions we get asked. If you have a question that isn&apos;t answered
+                here, feel free to reach out to us.
+              </p>
             </div>
+            <div className="max-w-3xl mx-auto w-full mt-20">
+              <Accordion type="single" collapsible>
+                {FAQ.map((faq) => (
+                  <AccordionItem key={faq.id} value={faq.id}>
+                    <AccordionTrigger>{faq.question}</AccordionTrigger>
+                    <AccordionContent>{faq.answer}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </div>
         </AnimationContainer>
       </MaxWidthWrapper>
 
