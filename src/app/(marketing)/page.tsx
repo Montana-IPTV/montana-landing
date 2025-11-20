@@ -246,13 +246,13 @@ const HomePage = async () => {
       <MaxWidthWrapper className="py-8">
         <AnimationContainer delay={0.1}>
           <section
-            className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center rounded-3xl bg-card ring-1 ring-border px-6 py-8">
+            className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center rounded-3xl bg-card ring-1 ring-border px-6 py-8 pl-8">
             {/* Left: Copy */}
-            <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+            <div className="space-y-4">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
                 Kendi Netflix’inizi Kurmak İster misiniz?
               </h2>
-              <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-base leading-relaxed text-muted-foreground">
                 Tamamen size özel tasarım, güçlü altyapı ve yüksek trafikli yayın sunucularıyla
                 kendi Netflix tarzı platformunuzu birkaç gün içinde yayına almanızı sağlıyoruz.
               </p>
@@ -298,17 +298,16 @@ const HomePage = async () => {
       <MaxWidthWrapper className="mt-40 mb-40 max-w-[90vw] overflow-x-hidden scrollbar-hide">
         <AnimationContainer delay={0.1}>
           <LampContainer/>
-          <div className="flex flex-col items-center justify-center relative w-full text-center -mt-[180px]">
+          <div className="flex flex-col items-center justify-center relative w-full text-center -mt-[200px]">
             <div className="flex flex-col items-center justify-center w-full">
-              <h2 className="mt-6 text-2xl font-semibold text-center lg:text-3xl xl:text-4xl">
-                Frequently Asked Questions
+              <h2 className="mt-6 text-2xl font-semibold text-center lg:text-3xl xl:text-5xl">
+                Sıkça Sorulan Sorular
               </h2>
               <p className="max-w-lg mt-6 text-center text-neutral-500">
-                Here are some of the most common questions we get asked. If you have a question that isn&apos;t answered
-                here, feel free to reach out to us.
+                Merak ettiğiniz tüm soruların cevapları burada! Hizmetlerimiz, fiyatlandırma ve daha fazlası hakkında
               </p>
             </div>
-            <div className="max-w-3xl mx-auto w-full mt-20">
+            <div className="max-w-3xl mx-auto w-full mt-10">
               <Accordion type="single" collapsible>
                 {FAQ.map((faq) => (
                   <AccordionItem key={faq.id} value={faq.id}>
