@@ -136,11 +136,11 @@ const HomePage = async () => {
       </MaxWidthWrapper>
 
       {/* Reviews Section */}
-      <MaxWidthWrapper className="py-10">
+      <MaxWidthWrapper className="py-8 pb-2 sm:py-10">
         <AnimationContainer delay={0.1}>
           <div
             id="reviews"
-            className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto scroll-mt-[120px]">
+            className="flex flex-col items-center lg:items-center justify-center w-full md:py-8 max-w-xl mx-auto scroll-mt-[120px]">
             <MagicBadge title="Sizden Gelenler"/>
             <h2
               className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
@@ -151,12 +151,12 @@ const HomePage = async () => {
             </p>
           </div>
         </AnimationContainer>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 sm:py-10">
           {REVIEWS.slice(0, 3).map((review, index) => (
             <AnimationContainer delay={0.2 * index} key={index}>
               <MagicCard key={index} className="md:p-0 h-full">
                 <Card className="flex flex-col w-full border-none h-full">
-                  <CardHeader className="space-y-0">
+                  <CardHeader className="space-y-0 p-4">
                     <CardTitle className="text-lg font-medium text-muted-foreground">
                       {review.name}
                     </CardTitle>
@@ -164,12 +164,12 @@ const HomePage = async () => {
                       {review.username}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-4 pb-4">
+                  <CardContent className="space-y-4 pb-4 px-4">
                     <p className="text-muted-foreground">
                       {review.review}
                     </p>
                   </CardContent>
-                  <CardFooter className="w-full space-x-1 mt-auto">
+                  <CardFooter className="w-full space-x-1 mt-auto px-4">
                     {Array.from({length: review.rating}, (_, i) => (
                       <StarIcon key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500"/>
                     ))}
@@ -242,9 +242,9 @@ const HomePage = async () => {
         <AnimationContainer delay={0.1}>
           <section
             id="contact"
-            className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center rounded-3xl bg-card ring-1 ring-border px-6 py-8 pl-8 scroll-mt-[120px]">
+            className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center rounded-3xl bg-card ring-1 ring-border p-4 md:px-6 md:py-8 md:pl-8 scroll-mt-[120px]">
             <div className="space-y-4">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+              <h2 className="text-2xl sm:text-4xl font-bold text-foreground">
                 Kendi Netflix’inizi Kurmak İster misiniz?
               </h2>
               <p className="text-base leading-relaxed text-muted-foreground">
@@ -290,12 +290,12 @@ const HomePage = async () => {
       </MaxWidthWrapper>
 
       {/* CTA Section */}
-      <MaxWidthWrapper className="mt-40 mb-40 max-w-[90vw] overflow-x-hidden scrollbar-hide">
+      <MaxWidthWrapper className="mt-10 lg:mt-40 mb-40 max-w-[90vw] overflow-x-hidden scrollbar-hide">
         <AnimationContainer delay={0.1}>
           <div id="faq" className="scroll-mt-[120px]">
             <LampContainer/>
             <div
-              className="flex flex-col items-center justify-center relative w-full text-center -mt-[180px]">
+              className="flex flex-col items-center justify-center relative w-full text-center lg:-mt-[180px]">
               <div className="flex flex-col items-center justify-center w-full">
                 <h2 className="mt-6 text-2xl font-semibold text-center lg:text-3xl xl:text-5xl">
                   Sıkça Sorulan Sorular

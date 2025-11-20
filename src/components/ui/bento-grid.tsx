@@ -30,7 +30,7 @@ export const CARDS = [
     cta: "Learn more",
     background: (
       <div
-        className="absolute right-[-100px] top-10 w-[80%] opacity-50 origin-to translate-x-0 transition-all duration-300 ease-out group-hover:-translate-x-10 p-2">
+        className="absolute right-[-100px] bottom-6 w-[250px] sm:-bottom-5 lg:bottom-unset lg:top-10  sm:w-[45%] lg:w-[80%] opacity-50 origin-to translate-x-0 transition-all duration-300 ease-out group-hover:-translate-x-10 p-2">
         <Image src="/assets/home/devices/mobile.png" alt="pc" className="w-full h-full" height={360} width={360}/>
       </div>
     ),
@@ -44,7 +44,7 @@ export const CARDS = [
     className: "col-span-3 lg:col-span-2",
     background: (
       <div
-        className="absolute right-[-100px] top-10 w-[80%] md:right-2 md:top-[-10px] md:w-[50%] opacity-50 origin-to translate-x-0 transition-all duration-300 ease-out group-hover:-translate-x-10 p-2">
+        className="absolute right-[-100px] sm:-bottom-5 bottom-6 w-[250px] sm:w-[50%] lg:bottom-unset lg:right-2 lg:top-[-10px] lg:w-[50%] opacity-50 origin-to translate-x-0 transition-all duration-300 ease-out group-hover:-translate-x-10 p-2">
         <Image src="/assets/home/devices/tv.png" alt="tv" className="w-full h-full" height={360} width={360}/>
       </div>
     ),
@@ -58,7 +58,7 @@ export const CARDS = [
     className: "col-span-3 lg:col-span-2 max-w-full overflow-hidden",
     background: (
       <div
-        className="absolute right-2 top-[-10px] w-[50%] opacity-50 origin-to translate-x-0 transition-all duration-300 ease-out group-hover:-translate-x-10 p-2">
+        className="absolute right-[-100px] sm:-bottom-5  bottom-6 w-[250px] sm:w-[50%] lg:bottom-unset lg:right-2 lg:top-[-10px] lg:w-[50%] opacity-50 origin-to translate-x-0 transition-all duration-300 ease-out group-hover:-translate-x-10 p-2">
         <Image src="/assets/home/devices/pc.png" alt="pc" className="w-full h-full" height={360} width={360}/>
       </div>
     ),
@@ -72,7 +72,7 @@ export const CARDS = [
     cta: "Learn more",
     background: (
       <div
-        className="absolute right-[-90px] top-10 w-[80%] opacity-50 origin-to translate-x-0 transition-all duration-300 ease-out group-hover:-translate-x-10 p-2">
+        className="absolute right-[-100px] sm:-bottom-5  bottom-6 w-[250px] sm:w-[50%] lg:bottom-unset lg:right-[-90px] lg:top-10 lg:w-[80%] opacity-50 origin-to translate-x-0 transition-all duration-300 ease-out group-hover:-translate-x-10 p-2">
         <Image src="/assets/home/devices/tablet.png" alt="pc" className="w-full h-full" height={360} width={360}/>
       </div>
     ),
