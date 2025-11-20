@@ -9,4 +9,8 @@ export const NAV_LINKS = [
     title: "Platformlar",
     href: "#platforms",
   },
+  {
+    title: "TekYerde",
+    href: "#companies",
+  },
 ];

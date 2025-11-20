@@ -69,10 +69,10 @@ const HomePage = async () => {
       {/* Companies Section */}
       <MaxWidthWrapper>
         <AnimationContainer delay={0.4}>
-          <div className="py-14">
+          <div className="py-14 scroll-mt-40" id="companies">
             <div className="mx-auto px-4 md:px-8">
               <h2 className="text-center text-sm font-medium font-heading text-neutral-400 uppercase">
-                Trusted by the best in the industry
+                Tüm Yayın Platformları ve Spor Kanalları Tek Yerde!
               </h2>
               <div className="mt-8">
                 <ul className="flex flex-wrap items-center gap-x-6 gap-y-6 md:gap-x-16 justify-center">
@@ -101,7 +101,7 @@ const HomePage = async () => {
           <div
             id="pricing"
             className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto scroll-mt-[100px]">
-            <MagicBadge title="Simple Pricing"/>
+            <MagicBadge title="Planlar"/>
             <h2
               className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
               Filmler ve Diziler Tek Yerde
@@ -246,8 +246,8 @@ const HomePage = async () => {
       <MaxWidthWrapper className="py-8">
         <AnimationContainer delay={0.1}>
           <section
-            className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center rounded-3xl bg-card ring-1 ring-border px-6 py-8 pl-8">
-            {/* Left: Copy */}
+            id="contact"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center rounded-3xl bg-card ring-1 ring-border px-6 py-8 pl-8 scroll-mt-[120px]">
             <div className="space-y-4">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
                 Kendi Netflix’inizi Kurmak İster misiniz?
@@ -284,7 +284,6 @@ const HomePage = async () => {
               </div>
             </div>
 
-            {/* Right: Multi-device Mockup */}
             <div className="relative w-full">
               <div className="w-full flex items-center justify-center">
                 <Image className="object-contain" src="/assets/home/partnership.png" alt="partnership" width={2658} height={1803} />

@@ -113,7 +113,7 @@ const Navbar = () => {
 
           <div className="hidden lg:flex items-center">
             <div className="flex items-center gap-x-4">
-              <Link href="/auth/sign-up" className={buttonVariants({variant: "blue"})}>
+              <Link href="#contact" className={buttonVariants({variant: "blue"})}>
                 İletişim
               </Link>
             </div>
