@@ -13,4 +13,13 @@ export const NAV_LINKS = [
     title: "TekYerde",
     href: "#companies",
   },
+  {
+    title: "Sizden Gelenler",
+    href: "#reviews",
+  },
+  {
+    title: "SSS",
+    href: "#faq",
+  }
 ];
+

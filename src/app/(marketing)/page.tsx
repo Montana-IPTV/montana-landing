@@ -22,46 +22,40 @@ const HomePage = async () => {
   return (
     <div className="overflow-x-hidden scrollbar-hide size-full">
       {/* Hero Section */}
-      <div
-        className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
+      <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
         <MaxWidthWrapper>
-          <div
-            className="flex flex-col items-center justify-center w-full text-center">
+          <div className="flex flex-col items-center justify-center w-full text-center px-4">
             <AnimationContainer className="flex flex-col items-center justify-center w-full text-center">
               <h1
-                className="text-foreground text-center py-4 text-5xl font-bold tracking-normal text-balance sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] w-full font-heading">
-                Tüm Platformlar <span
-                className="text-transparent bg-gradient-to-r from-[#1E7ED6] to-[#76B3EB] bg-clip-text inline-bloc">
-                                Tek Paket
-                            </span>
+                className="text-foreground text-center py-4 text-4xl sm:text-5xl md:text-7xl font-bold tracking-normal text-balance !leading-[1.15] w-full font-heading">
+                Tüm Platformlar{" "}<span
+                className="text-transparent bg-gradient-to-r from-[#1E7ED6] to-[#76B3EB] bg-clip-text inline-block"> Tek Paket</span>
               </h1>
-              <p className="mb-12 text-xl tracking-tight md:text-2xl text-balance">
-                            <span
-                              className="text-transparent bg-gradient-to-r from-[#1E7ED6] to-[#76B3EB] bg-clip-text inline-bloc">Montana Servers </span>
-                ile premium kalitenin farkını keşfedin!
+
+              <p className="text-lg sm:text-xl md:text-2xl tracking-tight text-balance px-2">
+              <span className="text-transparent bg-gradient-to-r from-[#1E7ED6] to-[#76B3EB] bg-clip-text inline-block">
+                Montana Servers{" "}
+              </span> ile premium kalitenin farkını keşfedin!
               </p>
-              <div className="flex items-center justify-center whitespace-nowrap gap-4 z-50">
-                <Button asChild variant="blue">
-                  <Link href={user ? "/dashboard" : "/auth/sign-in"} className="flex items-center">
-                    <span className="text-md">Hesap Oluştur</span>
-                    <ChevronRightIcon className="w-5 h-5 ml-1"/>
-                  </Link>
-                </Button>
-              </div>
             </AnimationContainer>
           </div>
         </MaxWidthWrapper>
-        <AnimationContainer delay={0.2}
-                            className="relative pt-20 pb-20 md:py-10 px-2 w-full flex items-center justify-center">
+
+        <AnimationContainer
+          delay={0.2}
+          className="relative pt-4 md:pt-12 pb-8 sm:pb-14 md:pb-16 px-2 w-full flex items-center justify-center"
+        >
           <div
-            className="absolute md:top-[20%] left-1/2 gradient w-2/5 -translate-x-1/2 h-1/5 md:h-1/4 inset-0 blur-[9rem] animate-image-glow"></div>
+            className="absolute top-[25%] left-1/2 gradient w-[80%] sm:w-2/3 md:w-2/5 -translate-x-1/2 h-[20%] sm:h-[25%] md:h-[30%] blur-[9rem] animate-image-glow"
+          ></div>
+
           <Image
             src="/assets/home/hero-2.png"
             alt="Dashboard"
             width={1330}
             height={480}
             quality={100}
-            className="mx-auto max-w-full md:max-w-screen-2xl px-4 md:px-12 lg:px-12 w-full h-auto relative z-10"
+            className="mx-auto max-w-none sm:max-w-full md:max-w-screen-2xl px-2 sm:px-4 md:px-12 w-[600px] sm:w-full h-auto relative z-10"
           />
         </AnimationContainer>
       </div>
@@ -84,7 +78,7 @@ const HomePage = async () => {
                         width={80}
                         height={80}
                         quality={100}
-                        className="w-32 h-[72px] object-contain"
+                        className="w-20 sm:w-32 h-[45px] sm:h-[72px] object-contain"
                       />
                     </li>
                   ))}
@@ -145,7 +139,8 @@ const HomePage = async () => {
       <MaxWidthWrapper className="py-10">
         <AnimationContainer delay={0.1}>
           <div
-            className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
+            id="reviews"
+            className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto scroll-mt-[120px]">
             <MagicBadge title="Sizden Gelenler"/>
             <h2
               className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
@@ -286,7 +281,8 @@ const HomePage = async () => {
 
             <div className="relative w-full">
               <div className="w-full flex items-center justify-center">
-                <Image className="object-contain" src="/assets/home/partnership.png" alt="partnership" width={2658} height={1803} />
+                <Image className="object-contain" src="/assets/home/partnership.png" alt="partnership" width={2658}
+                       height={1803}/>
               </div>
             </div>
           </section>
@@ -296,25 +292,28 @@ const HomePage = async () => {
       {/* CTA Section */}
       <MaxWidthWrapper className="mt-40 mb-40 max-w-[90vw] overflow-x-hidden scrollbar-hide">
         <AnimationContainer delay={0.1}>
-          <LampContainer/>
-          <div className="flex flex-col items-center justify-center relative w-full text-center -mt-[200px]">
-            <div className="flex flex-col items-center justify-center w-full">
-              <h2 className="mt-6 text-2xl font-semibold text-center lg:text-3xl xl:text-5xl">
-                Sıkça Sorulan Sorular
-              </h2>
-              <p className="max-w-lg mt-6 text-center text-neutral-500">
-                Merak ettiğiniz tüm soruların cevapları burada! Hizmetlerimiz, fiyatlandırma ve daha fazlası hakkında
-              </p>
-            </div>
-            <div className="max-w-3xl mx-auto w-full mt-10">
-              <Accordion type="single" collapsible>
-                {FAQ.map((faq) => (
-                  <AccordionItem key={faq.id} value={faq.id}>
-                    <AccordionTrigger>{faq.question}</AccordionTrigger>
-                    <AccordionContent>{faq.answer}</AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
+          <div id="faq" className="scroll-mt-[120px]">
+            <LampContainer/>
+            <div
+              className="flex flex-col items-center justify-center relative w-full text-center -mt-[180px]">
+              <div className="flex flex-col items-center justify-center w-full">
+                <h2 className="mt-6 text-2xl font-semibold text-center lg:text-3xl xl:text-5xl">
+                  Sıkça Sorulan Sorular
+                </h2>
+                <p className="max-w-lg mt-6 text-center text-neutral-500">
+                  Merak ettiğiniz tüm soruların cevapları burada! Hizmetlerimiz, fiyatlandırma ve daha fazlası hakkında
+                </p>
+              </div>
+              <div className="max-w-3xl mx-auto w-full mt-10">
+                <Accordion type="single" collapsible>
+                  {FAQ.map((faq) => (
+                    <AccordionItem key={faq.id} value={faq.id}>
+                      <AccordionTrigger>{faq.question}</AccordionTrigger>
+                      <AccordionContent>{faq.answer}</AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
             </div>
           </div>
         </AnimationContainer>
