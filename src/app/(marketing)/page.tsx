@@ -290,7 +290,7 @@ const HomePage = async () => {
       </MaxWidthWrapper>
 
       {/* CTA Section */}
-      <MaxWidthWrapper className="mt-10 lg:mt-40 mb-40 max-w-[90vw] overflow-x-hidden scrollbar-hide">
+      <MaxWidthWrapper className="mt-10 lg:mt-40 mb-40 md:max-w-[90vw] overflow-x-hidden scrollbar-hide">
         <AnimationContainer delay={0.1}>
           <div id="faq" className="scroll-mt-[120px]">
             <LampContainer/>
