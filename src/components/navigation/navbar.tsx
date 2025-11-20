@@ -46,8 +46,7 @@ const Navbar = () => {
       "sticky top-0 inset-x-0 h-16 md:h-24 w-full border-b border-transparent z-[49] select-none",
       scroll && "border-background/80 bg-background/40 backdrop-blur-md"
     )}>
-      <AnimationContainer reverse delay={0.1} className="size-full">
-        <MaxWidthWrapper className="flex items-center justify-between">
+      <MaxWidthWrapper className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
             <Link href="/#home">
               <Image src="/logo.svg" alt="logo" width={1920} height={682} className="w-[120px] h-[40px] md:w-[142px] md:h-[50px]"/>
@@ -80,7 +79,6 @@ const Navbar = () => {
           <MobileNavbar/>
 
         </MaxWidthWrapper>
-      </AnimationContainer>
     </header>
   )
 };

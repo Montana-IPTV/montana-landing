@@ -145,6 +145,9 @@ const Footer = () => {
           </p>
         </AnimationContainer>
       </div>
+      <div className="h-[18rem] lg:h-[18rem] hidden md:flex items-center justify-center">
+        <TextHoverEffect text="Montana" />
+      </div>
     </footer>
   )
 }

@@ -25,7 +25,6 @@ const HomePage = async () => {
       <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
         <MaxWidthWrapper>
           <div className="flex flex-col items-center justify-center w-full text-center px-4">
-            <AnimationContainer className="flex flex-col items-center justify-center w-full text-center">
               <h1
                 className="text-foreground text-center py-4 text-4xl sm:text-5xl md:text-7xl font-bold tracking-normal text-balance !leading-[1.15] w-full font-heading">
                 Tüm Platformlar{" "}<span
@@ -37,7 +36,6 @@ const HomePage = async () => {
                 Montana Servers{" "}
               </span> ile premium kalitenin farkını keşfedin!
               </p>
-            </AnimationContainer>
           </div>
         </MaxWidthWrapper>
 
