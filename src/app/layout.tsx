@@ -71,9 +71,15 @@ export const metadata: Metadata = {
         url: `${siteUrl}/assets/home/hero-2.png`,
         width: 1330,
         height: 480,
-        alt: "Montana ",
+        alt: "Montana - Tüm Platformlar, Tek Abonelik",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description: siteDescription,
+    images: [`${siteUrl}/assets/home/hero-2.png`],
   },
   robots: {
     index: true,
