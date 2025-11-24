@@ -11,13 +11,48 @@ import MagicCard from "@/components/ui/magic-card";
 import {COMPANIES, PROCESS} from "@/utils";
 import {REVIEWS} from "@/utils/constants/misc";
 import {ArrowRightIcon, ChevronRightIcon, CreditCardIcon, StarIcon} from "lucide-react";
-import Link from "next/link";
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {FAQ} from "@/utils/constants/faq";
 import {motion} from "framer-motion";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 const HomePage = () => {
+  useEffect(() => {
+    // Structured Data (JSON-LD) ekle
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://montanahd.com";
+    
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Montana - Tüm Platformlar, Tek Abonelik",
+      "description": "Montana ile üst düzey yayın deneyimini, kesintisiz performansı ve gerçek premium kaliteyi keşfedin. Tek üyelikle her ekranda sorunsuz erişim.",
+      "url": siteUrl,
+      "logo": `${siteUrl}/logo.svg`,
+      "sameAs": [],
+      "offers": {
+        "@type": "AggregateOffer",
+        "offerCount": "3",
+        "lowPrice": "299.90",
+        "highPrice": "499.90",
+        "priceCurrency": "TRY"
+      }
+    };
+
+    // Mevcut structured data script'ini kontrol et
+    let script = document.querySelector('script[type="application/ld+json"]');
+    
+    if (!script) {
+      script = document.createElement("script");
+      script.setAttribute("type", "application/ld+json");
+      document.head.appendChild(script);
+    }
+    
+    script.textContent = JSON.stringify(structuredData);
+
+    return () => {
+      // Cleanup yapmaya gerek yok, script kalıcı olmalı
+    };
+  }, []);
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
 

@@ -1,7 +1,95 @@
 import {Providers} from "@/components";
 import {Toaster} from "@/components/ui/sonner";
 import "@/styles/globals.css";
-import {aeonik, cn, generateMetadata, inter} from "@/utils";
+import {aeonik, cn, inter} from "@/utils";
+import type {Metadata} from "next";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://montanahd.com";
+const siteName = "Montana - Tüm Platformlar, Tek Abonelik";
+const siteDescription = "Montana ile üst düzey yayın deneyimini, kesintisiz performansı ve gerçek premium kaliteyi keşfedin. Tek üyelikle her ekranda sorunsuz erişim. Tüm platformlar tek abonelikte.";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: siteName,
+    template: `%s | ${siteName}`,
+  },
+  description: siteDescription,
+  keywords: [
+    "IPTV",
+    "ucuz iptv",
+    "canlı TV",
+    "film",
+    "dizi",
+    "Montana",
+    "montana iptv",
+    "montana müşteri paneli",
+    "montana destek",
+    "premium yayın",
+    "HD kalite",
+    "4K",
+    "spor kanalları",
+    "Netflix",
+    "Disney+",
+    "Prime Video",
+    "Exxen",
+    "bein sports",
+  ],
+  authors: [{name: "Montana"}],
+  creator: "Montana",
+  publisher: "Montana",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  icons: {
+    icon: [
+      {
+        url: "/favicon-dark.svg",
+        media: "(prefers-color-scheme: light)",
+        type: "image/svg+xml",
+      },
+      {
+        url: "/favicon-light.svg",
+        media: "(prefers-color-scheme: dark)",
+        type: "image/svg+xml",
+      },
+    ],
+    apple: "/favicon-light.svg",
+  },
+  manifest: "/site.webmanifest",
+  openGraph: {
+    type: "website",
+    locale: "tr_TR",
+    url: siteUrl,
+    siteName: siteName,
+    title: siteName,
+    description: siteDescription,
+    images: [
+      {
+        url: `${siteUrl}/assets/home/hero-2.png`,
+        width: 1330,
+        height: 480,
+        alt: "Montana ",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
+};
 
 export default function RootLayout({
                                      children,
@@ -9,24 +97,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scrollbar scroll-smooth" style={{scrollBehavior: 'smooth'}}>
+    <html lang="tr" className="scrollbar scroll-smooth" style={{scrollBehavior: 'smooth'}}>
     <head>
-      <link
-        rel="icon"
-        href="/favicon-dark.svg"
-        type="image/x-icon"
-        media="(prefers-color-scheme: light)"
-        sizes="any"
-      />
-      <link
-        rel="icon"
-        href="/favicon-light.svg"
-        type="image/x-icon"
-        media="(prefers-color-scheme: dark)"
-        sizes="any"
-      />
-      <title>Montana</title>
-      <meta name="description" content="Montana, the ultimate streaming platform for movies, TV shows, and more."/>
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -62,17 +134,3 @@ export default function RootLayout({
     </html>
   );
 };
-
-{/* <div className="absolute top-0 z-[-2] h-screen w-screen bg-background bg-[radial-gradient(100%_50%_at_50%_0%,rgba(168,85,247,0.13)_0,rgba(168,85,247,0)_50%,rgba(168,85,247,0)_100%)]"></div> */
-}
-{/* <AnimatedBackground
-                    numSquares={6}
-                    maxOpacity={0.2}
-                    duration={10}
-                    repeatDelay={10}
-                    className={cn(
-                        "[mask-image:radial-gradient(800px_circle_at_center,black,transparent)]",
-                        "inset-0 w-full h-[100%] inset-y-[-30%] hidden md:block",
-                    )}
-                /> */
-}
