@@ -1,42 +1,50 @@
 export const FAQ = [
     {
-        id: "item-1",
-        question: "Smart TV'lerde IPTV izlenir mi?",
-        answer: "Yes. It adheres to the WAI-ARIA design pattern, ensuring accessibility for all users.",
+      id: "item-1",
+      question: "Smart TV’de Montana kullanabilir miyim?",
+      answer:
+        "Evet. Montana, Samsung, LG, Sony ve diğer tüm popüler Smart TV modellerinde sorunsuz şekilde çalışır. Uygulamayı kurmanız yeterli, sistem otomatik olarak cihazınıza uyum sağlar.",
     },
     {
-        id: "item-2",
-        question: "Cihaz kurulumlarını nasıl yaparım?",
-        answer: "Our link management software offers features like link shortening, click tracking, customizable branded links, and AI-powered suggestions.",
+      id: "item-2",
+      question: "Nasıl kurulum yapacağım? Zor mu?",
+      answer:
+        "Hayır, oldukça kolay. Üyelik sonrası müşteri panelinizde adım adım kurulum rehberi, görsel anlatımlar ve hızlı videolar göreceksiniz. Takıldığınız bir nokta olursa 7/24 destek ekibi cihazınıza bağlanıp kurulumu sizin yerinize bile tamamlayabilir.",
     },
     {
-        id: "item-3",
-        question: "Test yayınları ücretli mi? test süresi ne kadar?",
-        answer: "We offer three plans: Free, Pro ($9/month), and Business ($49/month). Yearly subscriptions come with a discount.",
+      id: "item-3",
+      question: "Ücretsiz test hakkı var mı?",
+      answer:
+        "Evet. Montana’yı 3 saat boyunca tamamen ücretsiz deneyebilirsiniz. Tüm kanallar, içerikler ve özellikler test süresine dahildir. Memnun kalırsanız üyeliğe devam edebilirsiniz.",
     },
     {
-        id: "item-4",
-        question: "Üyelik bilgilerimi kaybettim, nasıl bulurum?",
-        answer: "Yes! You can easily upgrade or downgrade your plan at any time through your account settings.",
+      id: "item-4",
+      question: "Ödeme yaptıktan sonra hizmet ne kadar sürede açılır?",
+      answer:
+        "Ödeme onaylanır onaylanmaz hesabınız otomatik aktif olur. Genellikle 5–10 dakika içinde izlemeye başlayabilirsiniz.",
     },
     {
-        id: "item-5",
-        question: "İade garantisi varmı?",
-        answer: "Absolutely! We provide community support for all users and priority support for Pro and Business plan subscribers.",
+      id: "item-5",
+      question: "Montana’da iade garantisi var mı?",
+      answer:
+        "Evet. İlk 14 gün boyunca hiçbir risk almadan deneyebilirsiniz. İçeriklerimizden memnun kalmamanız veya yayınlarımızda sorun yaşamanız durumunda koşulsuz şekilde ücret iadesi sağlıyoruz.",
     },
     {
-        id: "item-6",
-        question: "3 Kişilik paketler ne anlama geliyor?",
-        answer: "Yes, our software allows you to track clicks on your links, providing insights into user engagement and demographics.",
+      id: "item-6",
+      question: "Üyelik bilgilerimi kaybettim, nasıl geri alabilirim?",
+      answer:
+        "Sorun değil. Destek ekibimizle iletişime geçtiğinizde kimlik doğrulaması sonrası tüm giriş bilgilerinizi yeniden oluşturup e-posta adresinize gönderiyoruz.",
     },
     {
-        id: "item-7",
-        question: "2 Kişilik paketler ne anlama geliyor?",
-        answer: "Currently, we do not have a dedicated mobile app, but our web application is fully responsive and works well on mobile devices.",
+      id: "item-7",
+      question: "1,2 ve 3 cihazlı paketler tam olarak ne sunuyor?",
+      answer:
+        "Aynı anda 1, 2 ve 3 farklı cihazda izleme özgürlüğü sağlar. Evde TV açıkken, başka bir odada tablet ve dışarıda telefon üzerinden eş zamanlı olarak kullanılabilir.",
     },
     {
-        id: "item-8",
-        question: "Ödeme Yaptığımda ne zaman aktif olur?",
-        answer: "We accept various payment methods including credit cards, PayPal, and other secure payment options.",
+      id: "item-8",
+      question: "2 kişilik paket kimin için uygun?",
+      answer:
+        "Aynı anda 2 cihazda izleme imkanı sunar. Örneğin siz TV’de izlerken bir başkası tablet veya telefondan farklı bir içerik açabilir.",
     },
-];
+  ];

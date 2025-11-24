@@ -7,10 +7,10 @@ const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenCo
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   prefix: "",
   theme: {
@@ -168,6 +168,25 @@ const config = {
           "100%": {
             transform: "rotate(360deg)",
           },
+        },
+        "gradient-x": {
+          "0%, 100%": {
+            "background-position": "0% 50%",
+          },
+          "50%": {
+            "background-position": "100% 50%",
+          },
+        },
+        "border-flow": {
+          "0%": {
+            "background-position": "0% 50%",
+          },
+          "50%": {
+            "background-position": "100% 50%",
+          },
+          "100%": {
+            "background-position": "0% 50%",
+          },
         }
       },
       animation: {
@@ -185,6 +204,8 @@ const config = {
         "rotate": "rotate 3s linear infinite both",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
         "loading": "loading 0.5s linear infinite",
+        "gradient-x": "gradient-x 3s ease infinite",
+        "border-flow": "border-flow 3s ease-in-out infinite",
       },
     },
   },

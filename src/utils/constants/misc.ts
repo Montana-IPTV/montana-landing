@@ -119,24 +119,24 @@ export const FEATURES = [
 
 export const REVIEWS = [
   {
-    name: "Michael Smith",
-    username: "@michaelsmith",
+    name: "Ahmet Yılmaz",
+    username: "@ahmetyilmaz",
     avatar: "https://randomuser.me/api/portraits/men/1.jpg",
     rating: 5,
-    review: "This tool is a lifesaver! Managing and tracking my links has never been easier. A must-have for anyone dealing with numerous links."
+    review: "Montana ile tüm maçları ve dizileri tek yerden izliyorum. Görüntü kalitesi harika, hiç donma yaşamadım. Kesinlikle tavsiye ederim!"
   },
   {
-    name: "Emily Johnson",
-    username: "@emilyjohnson",
+    name: "Ayşe Demir",
+    username: "@aysedemir",
     avatar: "https://randomuser.me/api/portraits/women/1.jpg",
-    rating: 4,
-    review: "Very useful app! It has streamlined my workflow considerably. A few minor bugs, but overall a great experience."
+    rating: 5,
+    review: "Çocuklarım için çizgi filmler, ben ve eşim için diziler... Hepsi tek abonelikte! Çok ekonomik ve kaliteli bir hizmet."
   },
   {
-    name: "Daniel Williams",
-    username: "@danielwilliams",
+    name: "Mehmet Kaya",
+    username: "@mehmetkaya",
     avatar: "https://randomuser.me/api/portraits/men/2.jpg",
     rating: 5,
-    review: "I've been using this app daily for months. The insights and analytics it provides are invaluable. Highly recommend it!"
+    review: "3 aydır kullanıyorum, Netflix ve diğer platformlara ödediğim parayı kestim. Montana'da her şey var, hem de çok daha uygun fiyata."
   },
 ] as const;

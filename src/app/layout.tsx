@@ -9,7 +9,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scrollbar">
+    <html lang="en" className="scrollbar scroll-smooth" style={{scrollBehavior: 'smooth'}}>
     <head>
       <link
         rel="icon"
@@ -27,6 +27,24 @@ export default function RootLayout({
       />
       <title>Montana</title>
       <meta name="description" content="Montana, the ultimate streaming platform for movies, TV shows, and more."/>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            if (typeof window !== 'undefined') {
+              window.addEventListener('load', function() {
+                if (!window.location.hash || window.location.hash === '#home') {
+                  window.scrollTo(0, 0);
+                }
+              });
+              if (document.readyState === 'complete') {
+                if (!window.location.hash || window.location.hash === '#home') {
+                  window.scrollTo(0, 0);
+                }
+              }
+            }
+          `,
+        }}
+      />
     </head>
     <body
       className={cn(
@@ -34,6 +52,7 @@ export default function RootLayout({
         aeonik.variable,
         inter.variable,
       )}
+      style={{paddingTop: 0, marginTop: 0, scrollPaddingTop: 0}}
     >
     <Providers>
       <Toaster richColors theme="dark" position="top-right"/>

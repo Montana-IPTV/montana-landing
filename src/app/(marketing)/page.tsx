@@ -1,3 +1,5 @@
+"use client";
+
 import {AnimationContainer, MaxWidthWrapper, PricingCards} from "@/components";
 import {BentoCard, BentoGrid, CARDS} from "@/components/ui/bento-grid";
 import {BorderBeam} from "@/components/ui/border-beam";
@@ -8,108 +10,226 @@ import MagicBadge from "@/components/ui/magic-badge";
 import MagicCard from "@/components/ui/magic-card";
 import {COMPANIES, PROCESS} from "@/utils";
 import {REVIEWS} from "@/utils/constants/misc";
-import {currentUser} from "@clerk/nextjs/server";
 import {ArrowRightIcon, ChevronRightIcon, CreditCardIcon, StarIcon} from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {FAQ} from "@/utils/constants/faq";
+import {motion} from "framer-motion";
+import {useState} from "react";
 
-const HomePage = async () => {
+const HomePage = () => {
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
 
-  const user = await currentUser();
+  const validateEmail = (emailValue: string): boolean => {
+    if (!emailValue.trim()) {
+      setEmailError("E-posta adresi gereklidir");
+      return false;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailValue.trim())) {
+      setEmailError("Geçerli bir e-posta adresi giriniz");
+      return false;
+    }
+    setEmailError("");
+    return true;
+  };
+
+  const handleJoinClick = () => {
+    if (!validateEmail(email)) {
+      return;
+    }
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || "";
+    window.location.href = `${appUrl}/register?email=${encodeURIComponent(email.trim())}`;
+  };
 
   return (
     <div className="overflow-x-hidden scrollbar-hide size-full">
       {/* Hero Section */}
-      <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
+      <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background min-h-screen">
         <MaxWidthWrapper>
-          <div className="flex flex-col items-center justify-center w-full text-center px-4">
-              <h1
+          <div className="flex flex-col items-center justify-center w-full text-center px-4 pt-16 md:pt-24">
+              <motion.img
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                src="/logo.svg"
+                alt="Montana Logo"
+                width={1920}
+                height={682}
+                className="w-[200px] h-[70px] md:w-[280px] md:h-[100px] mb-8 md:mb-12 object-contain"
+              />
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
                 className="text-foreground text-center py-4 text-4xl sm:text-5xl md:text-7xl font-bold tracking-normal text-balance !leading-[1.15] w-full font-heading">
-                Tüm Platformlar{" "}<span
-                className="text-transparent bg-gradient-to-r from-[#1E7ED6] to-[#76B3EB] bg-clip-text inline-block"> Tek Paket</span>
-              </h1>
+                Tüm Platformlar <br />
+                <span
+                className="text-transparent bg-gradient-to-r from-[#1E7ED6] via-[#76B3EB] to-[#1E7ED6] bg-clip-text inline-block bg-[length:200%_auto] animate-gradient-x"> Tek Abonelik</span>
+              </motion.h1>
 
-              <p className="text-lg sm:text-xl md:text-2xl tracking-tight text-balance px-2">
-              <span className="text-transparent bg-gradient-to-r from-[#1E7ED6] to-[#76B3EB] bg-clip-text inline-block">
-                Montana Servers{" "}
-              </span> ile premium kalitenin farkını keşfedin!
-              </p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                className="text-white-900 sm:text-lg md:text-xl tracking-tight text-balance px-2 mt-4 text-muted-foreground max-w-2xl mx-auto">
+                Montana ile üst düzey yayın deneyimini, kesintisiz performansı ve gerçek premium kaliteyi keşfedin. Tek üyelikle her ekranda sorunsuz erişim.
+              </motion.p>
+
+              {/* Email ve Bize Katıl Butonu */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                className="mt-12 mb-4 w-full max-w-lg mx-auto px-4"
+              >
+                <div className="w-full flex flex-col sm:flex-row items-start gap-3">
+                  <div className="w-full sm:flex-1 flex flex-col">
+                    <input
+                      type="text"
+                      placeholder="E-posta adresiniz"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                        if (emailError) {
+                          validateEmail(e.target.value);
+                        }
+                      }}
+                      onBlur={() => validateEmail(email)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          handleJoinClick();
+                        }
+                      }}
+                      className={`w-full px-5 py-4 rounded-lg bg-white/10 backdrop-blur-sm border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#1E7ED6] focus:border-transparent transition-all text-base ${
+                        emailError ? "border-red-500/50" : "border-white/20"
+                      }`}
+                    />
+                    {emailError && (
+                      <p className="text-xs text-red-400 mt-1.5 ml-1">{emailError}</p>
+                    )}
+                  </div>
+                  <button
+                    onClick={handleJoinClick}
+                    className="px-10 py-4 rounded-lg bg-gradient-to-r from-[#1E7ED6] to-[#76B3EB] text-white font-semibold transition-all duration-300 whitespace-nowrap text-base"
+                  >
+                    Bize Katıl
+                  </button>
+                </div>
+              </motion.div>
           </div>
         </MaxWidthWrapper>
 
-        <AnimationContainer
-          delay={0.2}
-          className="relative pt-4 md:pt-12 sm:pb-14 md:pb-16 px-2 w-full flex items-center justify-center"
-        >
-          <div
-            className="absolute top-[25%] left-1/2 gradient w-[80%] sm:w-2/3 md:w-2/5 -translate-x-1/2 h-[20%] sm:h-[25%] md:h-[30%] blur-[9rem] animate-image-glow"
-          ></div>
+        <div className="relative pt-4 md:pt-12 sm:pb-14 md:pb-16 px-2 w-full flex items-center justify-center">
+          {/* Blur efekti - sonradan beliriyor */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
+            className="absolute top-[25%] left-1/2 gradient w-[80%] sm:w-2/3 md:w-2/5 -translate-x-1/2 h-[20%] sm:h-[25%] md:h-[30%] blur-[9rem]"
+          ></motion.div>
 
-          <Image
-            src="/assets/home/hero-2.png"
-            alt="Dashboard"
-            width={1330}
-            height={480}
-            quality={100}
-            className="mx-auto max-w-none sm:max-w-full md:max-w-screen-2xl px-2 sm:px-4 md:px-12 w-[600px] sm:w-full h-auto relative z-10"
-          />
-        </AnimationContainer>
+          {/* Ana görsel - alttan yukarı */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+            className="relative z-10"
+          >
+            <img
+              src="/assets/home/hero-2.png"
+              alt="Dashboard"
+              width={1330}
+              height={480}
+              className="mx-auto max-w-none sm:max-w-full md:max-w-screen-2xl px-2 sm:px-4 md:px-12 w-[600px] sm:w-full h-auto"
+            />
+          </motion.div>
+        </div>
+
       </div>
 
       {/* Companies Section */}
-      <MaxWidthWrapper>
-        <AnimationContainer delay={0.4}>
-          <div className="py-4 md:py-14 scroll-mt-40" id="companies">
+      <MaxWidthWrapper className="pt-16 md:pt-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          <div className="pb-12 md:pb-16" id="companies">
             <div className="mx-auto px-4 md:px-8">
-              <h2 className="text-center text-sm font-medium font-heading text-neutral-400 uppercase">
+              <h2 className="text-center text-xl md:text-2xl lg:text-3xl font-semibold font-heading text-neutral-200 uppercase">
                 Tüm Yayın Platformları ve Spor Kanalları Tek Yerde!
               </h2>
               <div className="mt-8">
                 <ul className="flex flex-wrap items-center gap-x-6 gap-y-6 md:gap-x-16 justify-center">
-                  {COMPANIES.map((company) => (
-                    <li key={company.name}>
-                      <Image
+                  {COMPANIES.map((company, index) => (
+                    <motion.li
+                      key={company.name}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: index * 0.05, ease: "easeOut" }}
+                    >
+                      <img
                         src={company.logo}
                         alt={company.name}
                         width={80}
                         height={80}
-                        quality={100}
                         className="w-20 sm:w-32 h-[45px] sm:h-[72px] object-contain"
                       />
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
               </div>
             </div>
           </div>
-        </AnimationContainer>
+        </motion.div>
       </MaxWidthWrapper>
 
       {/* Pricing Section */}
-      <MaxWidthWrapper className="py-12 md:py-10">
-        <AnimationContainer delay={0.1}>
+      <MaxWidthWrapper className="py-20 md:py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div
             id="pricing"
             className="flex flex-col items-center lg:items-center justify-center w-full py-2 md:py-8 max-w-xl mx-auto scroll-mt-[100px]">
-            <MagicBadge title="Planlar"/>
+            <MagicBadge title="Paketlerimiz"/>
             <h2
               className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
-              Filmler ve Diziler Tek Yerde
+                Her İçerik Tek Abonelikte
             </h2>
             <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
               Tüm dünyadan binlerce kanal, film ve diziyi tek yerde toplayın. İstediğiniz platformda anında izleyin
             </p>
           </div>
-        </AnimationContainer>
-        <AnimationContainer delay={0.2}>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+        >
           <PricingCards/>
-        </AnimationContainer>
+        </motion.div>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.4 }}
+          className="text-center text-xs text-muted-foreground mt-6 max-w-2xl mx-auto"
+        >
+          * Paket fiyatları seçilen cihaz sayısı ve bölgeye göre değişiklik gösterebilir.
+        </motion.p>
       </MaxWidthWrapper>
 
       {/* Features Section */}
-      <MaxWidthWrapper className="pt-10">
+      <MaxWidthWrapper className="pt-20 md:pt-24 pb-12 md:pb-16">
         <AnimationContainer delay={0.1}>
           <div
             id="platforms"
@@ -134,25 +254,36 @@ const HomePage = async () => {
       </MaxWidthWrapper>
 
       {/* Reviews Section */}
-      <MaxWidthWrapper className="py-8 pb-2 sm:py-10">
-        <AnimationContainer delay={0.1}>
+      <MaxWidthWrapper className="py-20 md:py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div
             id="reviews"
             className="flex flex-col items-center lg:items-center justify-center w-full md:py-8 max-w-xl mx-auto scroll-mt-[120px]">
-            <MagicBadge title="Sizden Gelenler"/>
+            <MagicBadge title="Yorumlar"/>
             <h2
               className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
               Sizden Gelenler
             </h2>
             <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-              Gerçek deneyimler, samimi düşünceler. Ürünlerimizi en iyi anlatanlar sizsiniz.
+              Binlerce memnun kullanıcımızın Montana deneyimi. Premium yayın kalitesi ve kesintisiz hizmet hakkında ne dediklerini keşfedin.
             </p>
           </div>
-        </AnimationContainer>
+        </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 sm:py-10">
           {REVIEWS.slice(0, 3).map((review, index) => (
-            <AnimationContainer delay={0.2 * index} key={index}>
-              <MagicCard key={index} className="md:p-0 h-full">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -30, rotate: -2 }}
+              whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <MagicCard className="md:p-0 h-full">
                 <Card className="flex flex-col w-full border-none h-full">
                   <CardHeader className="space-y-0 p-4">
                     <CardTitle className="text-lg font-medium text-muted-foreground">
@@ -174,12 +305,18 @@ const HomePage = async () => {
                   </CardFooter>
                 </Card>
               </MagicCard>
-            </AnimationContainer>
+            </motion.div>
           ))}
           <div className="flex flex-col items-start h-min gap-6">
             {REVIEWS.slice(3, 6).map((review, index) => (
-              <AnimationContainer delay={0.2 * index} key={index}>
-                <MagicCard key={index} className="md:p-0">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: (index + 3) * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <MagicCard className="md:p-0">
                   <Card className="flex flex-col w-full border-none h-min">
                     <CardHeader className="space-y-0">
                       <CardTitle className="text-lg font-medium text-muted-foreground">
@@ -201,13 +338,19 @@ const HomePage = async () => {
                     </CardFooter>
                   </Card>
                 </MagicCard>
-              </AnimationContainer>
+              </motion.div>
             ))}
           </div>
           <div className="flex flex-col items-start h-min gap-6">
             {REVIEWS.slice(6, 9).map((review, index) => (
-              <AnimationContainer delay={0.2 * index} key={index}>
-                <MagicCard key={index} className="md:p-0">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: 30, rotate: 2 }}
+                whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: (index + 6) * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <MagicCard className="md:p-0">
                   <Card className="flex flex-col w-full border-none h-min">
                     <CardHeader className="space-y-0">
                       <CardTitle className="text-lg font-medium text-muted-foreground">
@@ -229,71 +372,29 @@ const HomePage = async () => {
                     </CardFooter>
                   </Card>
                 </MagicCard>
-              </AnimationContainer>
+              </motion.div>
             ))}
           </div>
         </div>
       </MaxWidthWrapper>
 
-      {/* SaaS OTT Builder Section */}
-      <MaxWidthWrapper className="py-8">
-        <AnimationContainer delay={0.1}>
-          <section
-            id="contact"
-            className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center rounded-3xl bg-card ring-1 ring-border p-4 md:px-6 md:py-8 md:pl-8 scroll-mt-[120px]">
-            <div className="space-y-4">
-              <h2 className="text-2xl sm:text-4xl font-bold text-foreground">
-                Kendi Netflix’inizi Kurmak İster misiniz?
-              </h2>
-              <p className="text-base leading-relaxed text-muted-foreground">
-                Tamamen size özel tasarım, güçlü altyapı ve yüksek trafikli yayın sunucularıyla
-                kendi Netflix tarzı platformunuzu birkaç gün içinde yayına almanızı sağlıyoruz.
-              </p>
-              <ul className="mt-6 grid grid-cols-1 gap-3 text-sm sm:text-base text-muted-foreground">
-                <li className="flex items-start gap-3">
-                  <span className="mt-1.5 size-2.5 rounded-full bg-primary"></span>
-                  <span>Hazır altyapı — hızlı kurulum</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-none mt-1.5 size-2.5 rounded-full bg-primary"></span>
-                  <span>Sunucu & CDN hizmeti (yüksek performans + düşük gecikme)</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-none mt-1.5 size-2.5 rounded-full bg-primary"></span>
-                  <span>Tamamen white-label tasarım</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-none mt-1.5 size-2.5 rounded-full bg-primary"></span>
-                  <span>Ödeme sistemi & üyelik altyapısı</span>
-                </li>
-              </ul>
-              <div className="pt-2">
-                <Button asChild variant="blue" size="lg">
-                  <Link href={"/contact"}>Bizimle Çalış</Link>
-                </Button>
-                <p className="text-xs sm:text-sm text-muted-foreground mt-3">
-                  İletişim bilgilerinizi bırakın, ekibimiz en kısa sürede dönüş yapsın.
-                </p>
-              </div>
-            </div>
-
-            <div className="relative w-full">
-              <div className="w-full flex items-center justify-center">
-                <Image className="object-contain" src="/assets/home/partnership.png" alt="partnership" width={2658}
-                       height={1803}/>
-              </div>
-            </div>
-          </section>
-        </AnimationContainer>
-      </MaxWidthWrapper>
-
       {/* CTA Section */}
-      <MaxWidthWrapper className="mt-10 lg:mt-40 mb-40 md:max-w-[90vw] overflow-x-hidden scrollbar-hide">
-        <AnimationContainer delay={0.1}>
+      <MaxWidthWrapper className="mt-20 md:mt-32 lg:mt-48 mb-40 md:max-w-[90vw] overflow-x-hidden scrollbar-hide">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        >
           <div id="faq" className="scroll-mt-[120px]">
             <LampContainer/>
-            <div
-              className="flex flex-col items-center justify-center relative w-full text-center lg:-mt-[180px]">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.4, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="flex flex-col items-center justify-center relative w-full text-center lg:-mt-[180px]"
+            >
               <div className="flex flex-col items-center justify-center w-full">
                 <h2 className="mt-6 text-2xl font-semibold text-center lg:text-3xl xl:text-5xl">
                   Sıkça Sorulan Sorular
@@ -304,17 +405,25 @@ const HomePage = async () => {
               </div>
               <div className="max-w-3xl mx-auto w-full mt-10">
                 <Accordion type="single" collapsible>
-                  {FAQ.map((faq) => (
-                    <AccordionItem key={faq.id} value={faq.id}>
-                      <AccordionTrigger>{faq.question}</AccordionTrigger>
-                      <AccordionContent>{faq.answer}</AccordionContent>
-                    </AccordionItem>
+                  {FAQ.map((faq, index) => (
+                    <motion.div
+                      key={faq.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-50px" }}
+                      transition={{ duration: 0.3, delay: 0.2 + index * 0.05, ease: "easeOut" }}
+                    >
+                      <AccordionItem value={faq.id}>
+                        <AccordionTrigger>{faq.question}</AccordionTrigger>
+                        <AccordionContent>{faq.answer}</AccordionContent>
+                      </AccordionItem>
+                    </motion.div>
                   ))}
                 </Accordion>
               </div>
-            </div>
+            </motion.div>
           </div>
-        </AnimationContainer>
+        </motion.div>
       </MaxWidthWrapper>
 
     </div>
