@@ -3,6 +3,7 @@
 import { cn } from "@/utils";
 import { Check, Copy, LucideIcon } from "lucide-react";
 import React, { useState } from 'react'
+import { toast } from "sonner";
 
 interface Props {
     text: string;
@@ -20,7 +21,7 @@ const CopyButton = ({ text, className, icon }: Props) => {
         e.stopPropagation();
         setIsCopied(true);
         navigator.clipboard.writeText(text).then(() => {
-            // Clipboard başarıyla kopyalandı
+            toast.success("Copied to clipboard!");
         });
         setTimeout(() => {
             setIsCopied(false);
