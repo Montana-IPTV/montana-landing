@@ -30,21 +30,29 @@ const MobileNavbar = () => {
           </SheetTrigger>
         )}
         <SheetContent className="w-screen p-4">
-          <Link href="/#home">
-            <img src="/logo.svg" alt="logo" width={1920} height={682} className="w-[120px] h-[40px] md:w-[142px] md:h-[50px]"/>
-          </Link>
           <SheetClose asChild className="absolute top-5 right-4 bg-background z-20 flex items-center justify-center">
             <Button size="icon" variant="ghost" className="text-neutral-600">
               <X className="w-5 h-5"/>
             </Button>
           </SheetClose>
-          <div className="flex flex-col items-start w-full py-2 mt-2">
+          <div className="flex flex-col items-start w-full py-2 mt-2 gap-3">
             <Link 
-              href="#contact" 
+              href={process.env.NEXT_PUBLIC_SERVICES_URL || "#"} 
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleClose}
+              className="text-sm font-medium hover:text-primary transition-colors w-full py-2"
+            >
+              Bize Ulaşın
+            </Link>
+            <Link 
+              href={process.env.NEXT_PUBLIC_APP_URL || "#"} 
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={handleClose}
               className={buttonVariants({variant: "blue", className: "w-full"})}
             >
-              Hemen İzlemeye Başla
+              Giriş Yap
             </Link>
           </div>
         </SheetContent>

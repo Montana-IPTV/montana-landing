@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import {Footer} from "@/components";
+import {Footer, Navbar} from "@/components";
 import {motion, useAnimation} from "framer-motion";
 
 interface Props {
@@ -54,6 +54,7 @@ const MarketingLayout = ({children}: Props) => {
 
   return (
     <>
+      <Navbar/>
       <div id="home"
            className="absolute inset-0 h-[600px] md:h-full overflow-clip [mask-image:radial-gradient(ellipse_90%_80%_at_50%_0%,#000_80%,transparent_110%)] dark:bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[linear-gradient(to_right,#161616_1px,transparent_1px),linear-gradient(to_bottom,#161616_1px,transparent_1px)] bg-[size:3rem_3rem]">
         <div className="absolute inset-0 w-full h-full overflow-hidden">

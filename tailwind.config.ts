@@ -206,6 +206,7 @@ const config = {
         "loading": "loading 0.5s linear infinite",
         "gradient-x": "gradient-x 3s ease infinite",
         "border-flow": "border-flow 3s ease-in-out infinite",
+        "border-flow-slow": "border-flow 36s ease-in-out infinite",
       },
     },
   },

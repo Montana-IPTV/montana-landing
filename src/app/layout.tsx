@@ -105,24 +105,6 @@ export default function RootLayout({
   return (
     <html lang="tr" className="scrollbar scroll-smooth" style={{scrollBehavior: 'smooth'}}>
     <head>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            if (typeof window !== 'undefined') {
-              window.addEventListener('load', function() {
-                if (!window.location.hash || window.location.hash === '#home') {
-                  window.scrollTo(0, 0);
-                }
-              });
-              if (document.readyState === 'complete') {
-                if (!window.location.hash || window.location.hash === '#home') {
-                  window.scrollTo(0, 0);
-                }
-              }
-            }
-          `,
-        }}
-      />
     </head>
     <body
       className={cn(

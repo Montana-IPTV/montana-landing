@@ -142,7 +142,7 @@ const HomePage = () => {
                       }`}
                     />
                     {emailError && (
-                      <p className="text-xs text-red-400 mt-1.5 ml-1">{emailError}</p>
+                      <p className="text-xs text-red-400 mt-1.5 ml-1 text-left">{emailError}</p>
                     )}
                   </div>
                   <button
@@ -204,15 +204,16 @@ const HomePage = () => {
                       key={company.name}
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
+                      whileHover={{ scale: 1.15 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: index * 0.05, ease: "easeOut" }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
                     >
                       <img
                         src={company.logo}
                         alt={company.name}
                         width={80}
                         height={80}
-                        className="w-20 sm:w-32 h-[45px] sm:h-[72px] object-contain"
+                        className="w-20 sm:w-32 h-[45px] sm:h-[72px] object-contain transition-all duration-300 hover:brightness-125 hover:drop-shadow-[0_0_15px_rgba(30,126,214,0.5)]"
                       />
                     </motion.li>
                   ))}

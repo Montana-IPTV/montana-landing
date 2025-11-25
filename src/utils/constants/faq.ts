@@ -41,10 +41,4 @@ export const FAQ = [
       answer:
         "Aynı anda 1, 2 ve 3 farklı cihazda izleme özgürlüğü sağlar. Evde TV açıkken, başka bir odada tablet ve dışarıda telefon üzerinden eş zamanlı olarak kullanılabilir.",
     },
-    {
-      id: "item-8",
-      question: "2 kişilik paket kimin için uygun?",
-      answer:
-        "Aynı anda 2 cihazda izleme imkanı sunar. Örneğin siz TV’de izlerken bir başkası tablet veya telefondan farklı bir içerik açabilir.",
-    },
   ];

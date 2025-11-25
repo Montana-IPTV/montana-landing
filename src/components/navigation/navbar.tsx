@@ -31,16 +31,23 @@ const Navbar = () => {
       "sticky top-0 inset-x-0 h-16 md:h-24 w-full border-b border-transparent z-[49] select-none",
       scroll && "border-background/80 bg-background/40 backdrop-blur-md"
     )}>
-      <MaxWidthWrapper className="flex items-center justify-between">
-          <div className="flex items-center space-x-8">
-            <Link href="/#home">
-              <img src="/logo.svg" alt="logo" width={1920} height={682} className="w-[120px] h-[40px] md:w-[142px] md:h-[50px]"/>
+      <MaxWidthWrapper className="flex items-center justify-end">
+          <div className="hidden lg:flex items-center gap-4">
+            <Link 
+              href={process.env.NEXT_PUBLIC_SERVICES_URL || "#"} 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
+              Bize Ulaşın
             </Link>
-          </div>
-
-          <div className="hidden lg:flex items-center">
-            <Link href="#contact" className={buttonVariants({variant: "blue"})}>
-              Hemen İzlemeye Başla
+            <Link 
+              href={process.env.NEXT_PUBLIC_APP_URL || "#"} 
+              target="_blank"
+              rel="noopener noreferrer"
+              className={buttonVariants({variant: "blue"})}
+            >
+              Giriş Yap
             </Link>
           </div>
 

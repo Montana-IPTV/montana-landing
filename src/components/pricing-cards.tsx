@@ -92,21 +92,13 @@ const PricingCards = () => {
               "[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"
             )}
           >
-            {/* Animasyonlu Border */}
+            {/* Sabit Gradient Border */}
             <div className="absolute inset-0 rounded-xl overflow-hidden">
               <div className={cn(
-                "absolute inset-[-2px] bg-gradient-to-r from-[#1E7ED6] via-[#76B3EB] to-[#1E7ED6] transition-opacity duration-500 animate-border-flow",
+                "absolute inset-[-1.5px] rounded-xl bg-gradient-to-r from-[#1E7ED6] via-[#76B3EB] to-[#1E7ED6] transition-opacity duration-500",
                 isFeatured ? "opacity-100" : "opacity-0 group-hover:opacity-100"
               )}></div>
-              <div className="absolute inset-[2px] rounded-xl bg-gradient-to-br from-black via-zinc-950 to-black overflow-hidden"></div>
-            </div>
-
-            {/* Glow Effect */}
-            <div className={cn(
-              "absolute inset-0 transition-opacity duration-500",
-              isFeatured ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-            )}>
-              <div className="absolute top-0 left-1/4 w-1/2 h-1/2 bg-[#1E7ED6]/20 blur-[80px] rounded-full"></div>
+              <div className="absolute inset-[1.5px] rounded-xl bg-gradient-to-br from-black via-zinc-950 to-black overflow-hidden"></div>
             </div>
 
             {/* Popüler Badge */}
