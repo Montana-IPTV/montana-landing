@@ -28,8 +28,8 @@ export const CARDS = [
     cta: "Hemen Başla",
     background: (
       <div
-        className="absolute right-[-100px] bottom-6 w-[250px] sm:-bottom-5 lg:bottom-unset lg:top-10 sm:w-[45%] lg:w-[80%] opacity-50 origin-to translate-x-0 transition-all duration-300 ease-out group-hover:-translate-x-10 p-2">
-        <img src="/assets/home/devices/mobile.png" alt="mobile" className="w-full h-full" height={360} width={360}/>
+      className="absolute w-full h-full top-0 left-0 origin-center transition-transform duration-300 ease-out">
+      <img src="/assets/home/devices/mobile.png" alt="mobile" className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105" height={360} width={360}/>
       </div>
     ),
   },
@@ -42,8 +42,8 @@ export const CARDS = [
     className: "col-span-3 lg:col-span-2",
     background: (
       <div
-        className="absolute right-[-100px] sm:-bottom-5 bottom-6 w-[250px] sm:w-[50%] lg:bottom-unset lg:right-2 lg:top-[-10px] lg:w-[50%] opacity-50 origin-to translate-x-0 transition-all duration-300 ease-out group-hover:-translate-x-10 p-2">
-        <img src="/assets/home/devices/tv.png" alt="tv" className="w-full h-full" height={360} width={360}/>
+      className="absolute w-full h-full origin-center transition-transform duration-300 ease-out">
+      <img src="/assets/home/devices/tv.png" alt="tv" className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105" height={360} width={360}/>
       </div>
     ),
   },
@@ -56,8 +56,8 @@ export const CARDS = [
     className: "col-span-3 lg:col-span-2 max-w-full overflow-hidden",
     background: (
       <div
-        className="absolute right-[-100px] sm:-bottom-5 bottom-6 w-[250px] sm:w-[50%] lg:bottom-unset lg:right-2 lg:top-[-10px] lg:w-[50%] opacity-50 origin-to translate-x-0 transition-all duration-300 ease-out group-hover:-translate-x-10 p-2">
-        <img src="/assets/home/devices/pc.png" alt="pc" className="w-full h-full" height={360} width={360}/>
+      className="absolute w-full h-full origin-center transition-transform duration-300 ease-out">
+      <img src="/assets/home/devices/pc.png" alt="pc" className="w-full h-full object-cover max-w-none transition-transform duration-300 ease-out group-hover:scale-105" height={360} width={360}/>
       </div>
     ),
   },
@@ -70,8 +70,8 @@ export const CARDS = [
     cta: "Hemen İzle",
     background: (
       <div
-        className="absolute right-[-100px] sm:-bottom-5 bottom-6 w-[250px] sm:w-[50%] lg:bottom-unset lg:right-[-90px] lg:top-10 lg:w-[80%] opacity-50 origin-to translate-x-0 transition-all duration-300 ease-out group-hover:-translate-x-10 p-2">
-        <img src="/assets/home/devices/tablet.png" alt="tablet" className="w-full h-full" height={360} width={360}/>
+      className="absolute w-[130%] h-[130%] top-[-30%] left-[-15%] origin-center transition-transform duration-300 ease-out">
+      <img src="/assets/home/devices/mobile-2.png" alt="tablet" className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105" height={360} width={360}/>
       </div>
     ),
   },
@@ -133,13 +133,7 @@ const BentoCard = ({
       <div className="absolute top-0 left-1/4 w-1/2 h-1/2 bg-[#1E7ED6]/20 blur-[80px] rounded-full"></div>
     </div>
 
-    <div className="relative z-10">{background}</div>
-    
-    {/* İkon - Arka planda */}
-    <div className="absolute top-6 right-6 pointer-events-none z-0">
-      <Icon
-        className="h-48 w-48 text-white/10 transition-all duration-300 ease-in-out"/>
-    </div>
+    <div className="z-10 opacity-40">{background}</div>
 
     <div
       className="relative z-10 pointer-events-none flex flex-col gap-1 px-6 pb-6 transition-all duration-300 group-hover:-translate-y-10">
