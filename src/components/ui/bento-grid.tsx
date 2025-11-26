@@ -29,7 +29,7 @@ export const CARDS = [
     background: (
       <div
       className="absolute w-full h-full top-0 left-0 origin-center transition-transform duration-300 ease-out">
-      <img src="/assets/home/devices/mobile.png" alt="mobile" className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105" height={360} width={360}/>
+      <img src="/assets/home/devices/mobile.webp" alt="mobile" className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105" height={360} width={360}/>
       </div>
     ),
   },
@@ -43,7 +43,7 @@ export const CARDS = [
     background: (
       <div
       className="absolute w-full h-full origin-center transition-transform duration-300 ease-out">
-      <img src="/assets/home/devices/tv.png" alt="tv" className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105" height={360} width={360}/>
+      <img src="/assets/home/devices/tv.webp" alt="tv" className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105" height={360} width={360}/>
       </div>
     ),
   },
@@ -57,7 +57,7 @@ export const CARDS = [
     background: (
       <div
       className="absolute w-full h-full origin-center transition-transform duration-300 ease-out">
-      <img src="/assets/home/devices/pc.png" alt="pc" className="w-full h-full object-cover max-w-none transition-transform duration-300 ease-out group-hover:scale-105" height={360} width={360}/>
+      <img src="/assets/home/devices/pc.webp" alt="pc" className="w-full h-full object-cover max-w-none transition-transform duration-300 ease-out group-hover:scale-105" height={360} width={360}/>
       </div>
     ),
   },
@@ -71,7 +71,7 @@ export const CARDS = [
     background: (
       <div
       className="absolute w-[130%] h-[130%] top-[-30%] left-[-15%] origin-center transition-transform duration-300 ease-out">
-      <img src="/assets/home/devices/mobile-2.png" alt="tablet" className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105" height={360} width={360}/>
+      <img src="/assets/home/devices/mobile-2.webp" alt="tablet" className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105" height={360} width={360}/>
       </div>
     ),
   },
