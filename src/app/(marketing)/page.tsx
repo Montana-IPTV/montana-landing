@@ -20,7 +20,7 @@ const HomePage = () => {
   useEffect(() => {
     // Structured Data (JSON-LD) ekle
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://montanahd.com";
-    
+
     const structuredData = {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -40,13 +40,13 @@ const HomePage = () => {
 
     // Mevcut structured data script'ini kontrol et
     let script = document.querySelector('script[type="application/ld+json"]');
-    
+
     if (!script) {
       script = document.createElement("script");
       script.setAttribute("type", "application/ld+json");
       document.head.appendChild(script);
     }
-    
+
     script.textContent = JSON.stringify(structuredData);
 
     return () => {
@@ -173,7 +173,7 @@ const HomePage = () => {
             className="relative z-10"
           >
             <img
-              src="/assets/home/hero-2.png"
+              src="/assets/home/hero-3.webp"
               alt="Dashboard"
               width={1330}
               height={480}
