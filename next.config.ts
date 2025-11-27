@@ -6,27 +6,17 @@ const nextConfig: NextConfig = {
   
   async headers() {
     return [
-      // HTML sayfaları için cache control - deploy sonrası anında güncelleme
+      // HTML sayfaları için NO CACHE - her zaman yeni versionu yükle
       {
         source: '/((?!api|_next|static|.*\\..*|favicon.ico).*)',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=0, must-revalidate, stale-while-revalidate=60',
+            value: 'no-store, no-cache, must-revalidate, max-age=0',
           },
         ],
       },
-      // CSS dosyaları için cache control (CSS'lerin güncellenmesi için)
-      {
-        source: '/_next/static/css/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      // Diğer static assets için cache
+      // Static assets için cache (chunk'lar hash'li olduğu için güvenli)
       {
         source: '/_next/static/(.*)',
         headers: [
