@@ -1,10 +1,8 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // Generate build ID for cache busting
-  generateBuildId: async () => {
-    return `build-${Date.now()}`;
-  },
+  // Removed generateBuildId to prevent chunk loading issues
+  // Next.js will use default build ID generation which is more stable
   
   async headers() {
     return [
@@ -18,7 +16,17 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-      // Static assets için cache
+      // CSS dosyaları için cache control (CSS'lerin güncellenmesi için)
+      {
+        source: '/_next/static/css/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // Diğer static assets için cache
       {
         source: '/_next/static/(.*)',
         headers: [

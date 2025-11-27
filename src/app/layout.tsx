@@ -1,8 +1,8 @@
+import type {Metadata} from "next";
+import "@/styles/globals.css";
 import {Providers} from "@/components";
 import {Toaster} from "@/components/ui/sonner";
-import "@/styles/globals.css";
 import {aeonik, cn, inter} from "@/utils";
-import type {Metadata} from "next";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://montanahd.com";
 const siteName = "Montana - Tüm Platformlar, Tek Abonelik";
