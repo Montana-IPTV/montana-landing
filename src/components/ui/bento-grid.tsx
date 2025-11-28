@@ -87,7 +87,7 @@ const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid w-full auto-rows-[22rem] grid-cols-3 gap-4",
+        "grid w-full auto-rows-[16rem] sm:auto-rows-[22rem] grid-cols-3 gap-4",
         className,
       )}
     >
@@ -136,16 +136,16 @@ const BentoCard = ({
     <div className="z-10 opacity-40">{background}</div>
 
     <div
-      className="relative z-10 pointer-events-none flex flex-col gap-1 px-6 pb-6 transition-all duration-300 group-hover:-translate-y-10">
-      <h3 className="text-xl font-semibold text-neutral-200 group-hover:text-white transition-colors">
+      className="relative z-10 pointer-events-none flex flex-col gap-1 px-4 sm:px-6 pb-6 transition-all duration-300 group-hover:-translate-y-10">
+      <h3 className="text-lg sm:text-xl font-semibold text-neutral-200 group-hover:text-white transition-colors">
         {name}
       </h3>
-      <p className="max-w-lg text-neutral-400 group-hover:text-neutral-300 transition-colors">{description}</p>
+      <p className="text-xs sm:text-base max-w-lg text-neutral-400 group-hover:text-neutral-300 transition-colors">{description}</p>
     </div>
 
     <div
       className={cn(
-        "relative z-10 absolute bottom-0 flex w-full translate-y-10 flex-row items-center px-6 pb-6 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
+        "z-10 absolute bottom-0 flex w-full translate-y-10 flex-row items-center px-6 pb-6 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
       )}
     >
       <button

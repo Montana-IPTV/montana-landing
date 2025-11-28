@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <header className={cn(
-      "sticky top-0 inset-x-0 h-16 md:h-24 w-full border-b border-transparent z-[49] select-none",
+      "sticky top-0 inset-x-0 h-16 w-full border-b border-transparent z-[49] select-none",
       scroll && "border-background/80 bg-background/40 backdrop-blur-md"
     )}>
       <MaxWidthWrapper className="flex items-center justify-end">

@@ -112,15 +112,15 @@ const PricingCards = () => {
 
             <div className="relative z-10 flex flex-col h-full">
               <div className={cn(
-                "border-b border-border/30 p-6 text-center flex flex-col items-center",
+                "border-b border-border/30 p-4 pt-6 sm:p-6 text-center flex flex-col items-center",
                 isFeatured ? "bg-[#1E7ED6]/[0.1]" : "bg-foreground/[0.03]"
               )}>
-                <img 
-                  src={logoUrl} 
-                  alt={pkg.name} 
-                  width={1920} 
-                  height={682} 
-                  className="h-20 w-fit object-contain brightness-110 mb-6"
+                <img
+                  src={logoUrl}
+                  alt={pkg.name}
+                  width={1920}
+                  height={682}
+                  className="h-14 sm:h-20 w-fit object-contain brightness-110 mb-6"
                 />
                 {pkg.platformIcons && pkg.platformIcons.length > 0 && (
                   <div className="flex items-center justify-center gap-2 flex-wrap">
@@ -139,7 +139,7 @@ const PricingCards = () => {
                     {pkg.description}
                   </span>
                 )}
-                <h5 className="text-4xl font-bold bg-gradient-to-r from-white to-neutral-300 bg-clip-text text-transparent mt-4">
+                <h5 className="text-4xl font-bold bg-gradient-to-r from-white to-neutral-300 bg-clip-text text-transparent mt-2 sm:mt-4">
                   {price.toFixed(2)}
                   <span className="text-lg text-muted-foreground font-normal ml-1">
                     TRY/Ay
@@ -147,7 +147,7 @@ const PricingCards = () => {
                 </h5>
               </div>
 
-              <div className="p-6 space-y-3 flex-grow">
+              <div className="p-4 sm:p-6 space-y-4 flex-grow">
                 {pkg.features && pkg.features.length > 0 ? (
                   pkg.features.map((feature, featureIndex) => (
                     <motion.div
@@ -174,7 +174,7 @@ const PricingCards = () => {
                     window.location.href = `${appUrl}/register`;
                   }}
                   className={cn(
-                    "w-full inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold transition-all duration-300",
+                    "w-full inline-flex items-center justify-center rounded-lg px-6 py-2 sm:py-3 text-base font-semibold transition-all duration-300",
                     isFeatured
                       ? "bg-gradient-to-r from-[#1E7ED6] to-[#76B3EB] text-white hover:shadow-lg hover:shadow-[#1E7ED6]/50 hover:scale-105"
                       : "bg-white/5 text-white hover:bg-white/10 border border-white/10"

@@ -185,16 +185,16 @@ const HomePage = () => {
       </div>
 
       {/* Companies Section */}
-      <MaxWidthWrapper className="pt-16 md:pt-24">
+      <MaxWidthWrapper className="pt-8 md:pt-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <div className="pb-12 md:pb-16" id="companies">
-            <div className="mx-auto px-4 md:px-8">
-              <h2 className="text-center text-xl md:text-2xl lg:text-3xl font-semibold font-heading text-neutral-200 uppercase">
+          <div className="pb-8 md:pb-16" id="companies">
+            <div className="mx-auto">
+              <h2 className="text-center text-md md:text-2xl lg:text-3xl font-semibold font-heading text-neutral-200 uppercase">
                 Tüm Yayın Platformları ve Spor Kanalları Tek Yerde!
               </h2>
               <div className="mt-8">
@@ -225,7 +225,7 @@ const HomePage = () => {
       </MaxWidthWrapper>
 
       {/* Pricing Section */}
-      <MaxWidthWrapper className="py-20 md:py-24">
+      <MaxWidthWrapper className="py-6 sm:py-10 md:py-24">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -240,7 +240,7 @@ const HomePage = () => {
               className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
                 Her İçerik Tek Abonelikte
             </h2>
-            <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
+            <p className="mt-2 text-center lg:text-center text-sm sm:text-lg text-muted-foreground max-w-lg">
               Tüm dünyadan binlerce kanal, film ve diziyi tek yerde toplayın. İstediğiniz platformda anında izleyin
             </p>
           </div>
@@ -258,30 +258,30 @@ const HomePage = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.4 }}
-          className="text-center text-xs text-muted-foreground mt-6 max-w-2xl mx-auto"
+          className="text-center text-xs text-muted-foreground mt-4 sm:mt-6 max-w-2xl mx-auto"
         >
           * Paket fiyatları seçilen cihaz sayısı ve bölgeye göre değişiklik gösterebilir.
         </motion.p>
       </MaxWidthWrapper>
 
       {/* Features Section */}
-      <MaxWidthWrapper className="pt-20 md:pt-24 pb-12 md:pb-16">
+      <MaxWidthWrapper className="pt-10 sm:pt-14 md:pt-24 sm:pb-12 md:pb-16">
         <AnimationContainer delay={0.1}>
           <div
             id="platforms"
-            className="flex flex-col w-full items-center lg:items-center justify-center py-8 scroll-mt-[120px]">
+            className="flex flex-col w-full items-center lg:items-center justify-center sm:py-8 scroll-mt-[120px]">
             <MagicBadge title="Platformlar"/>
             <h2
               className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
               İstediğiniz şekilde İzleyin
             </h2>
-            <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
+            <p className="mt-4 text-center lg:text-center text-sm sm:text-lg text-muted-foreground max-w-lg">
               Tek bir ekrana bağlı kalma! Her yer senin sinema salonun.
             </p>
           </div>
         </AnimationContainer>
         <AnimationContainer delay={0.2}>
-          <BentoGrid className="py-8">
+          <BentoGrid className="pt-4 sm:py-8">
             {CARDS.map((feature, idx) => (
               <BentoCard key={idx} {...feature} />
             ))}
@@ -290,7 +290,7 @@ const HomePage = () => {
       </MaxWidthWrapper>
 
       {/* Reviews Section */}
-      <MaxWidthWrapper className="py-20 md:py-24">
+      <MaxWidthWrapper className="py-10 pb-4 sm:py-20 md:py-24">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -299,13 +299,13 @@ const HomePage = () => {
         >
           <div
             id="reviews"
-            className="flex flex-col items-center lg:items-center justify-center w-full md:py-8 max-w-xl mx-auto scroll-mt-[120px]">
+            className="flex flex-col items-center lg:items-center justify-center mb-4 w-full md:py-8 max-w-xl mx-auto scroll-mt-[120px]">
             <MagicBadge title="Yorumlar"/>
             <h2
               className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
               Sizden Gelenler
             </h2>
-            <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
+            <p className="mt-4 text-center lg:text-center text-sm sm:text-lg text-muted-foreground max-w-lg">
               Binlerce memnun kullanıcımızın Montana deneyimi. Premium yayın kalitesi ve kesintisiz hizmet hakkında ne dediklerini keşfedin.
             </p>
           </div>
@@ -319,22 +319,22 @@ const HomePage = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <MagicCard className="md:p-0 h-full">
+              <MagicCard className="md:p-0 h-full p-4">
                 <Card className="flex flex-col w-full border-none h-full">
-                  <CardHeader className="space-y-0 p-4">
-                    <CardTitle className="text-lg font-medium text-muted-foreground">
+                  <CardHeader className="space-y-0 p-0 pb-2 sm:p-4">
+                    <CardTitle className="text-md sm:text-lg font-medium text-muted-foreground">
                       {review.name}
                     </CardTitle>
                     <CardDescription>
                       {review.username}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-4 pb-4 px-4">
+                  <CardContent className="space-y-4 p-0 pb-4 sm:pb-0 sm:px-4 text-sm sm:text-base">
                     <p className="text-muted-foreground">
                       {review.review}
                     </p>
                   </CardContent>
-                  <CardFooter className="w-full space-x-1 mt-auto px-4">
+                  <CardFooter className="w-full space-x-1 mt-auto px-0 pb-2 sm:pb-4 sm:px-4 sm:pt-4">
                     {Array.from({length: review.rating}, (_, i) => (
                       <StarIcon key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500"/>
                     ))}
@@ -377,7 +377,7 @@ const HomePage = () => {
               </motion.div>
             ))}
           </div>
-          <div className="flex flex-col items-start h-min gap-6">
+          <div className="flex flex-col items-start sm:h-min gap-6">
             {REVIEWS.slice(6, 9).map((review, index) => (
               <motion.div
                 key={index}
@@ -415,7 +415,7 @@ const HomePage = () => {
       </MaxWidthWrapper>
 
       {/* CTA Section */}
-      <MaxWidthWrapper className="mt-20 md:mt-32 lg:mt-48 mb-40 md:max-w-[90vw] overflow-x-hidden scrollbar-hide">
+      <MaxWidthWrapper className="sm:mt-20 md:mt-32 lg:mt-48 mb-16 md:max-w-[90vw] overflow-x-hidden scrollbar-hide">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
