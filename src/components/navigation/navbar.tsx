@@ -32,17 +32,17 @@ const Navbar = () => {
       scroll && "border-background/80 bg-background/40 backdrop-blur-md"
     )}>
       <MaxWidthWrapper className="flex items-center justify-end">
-          <div className="hidden lg:flex items-center gap-4">
-            <Link 
-              href={process.env.NEXT_PUBLIC_SERVICES_URL || "#"} 
+          <div className="flex items-center gap-4">
+            <Link
+              href={process.env.NEXT_PUBLIC_SERVICES_URL || "#"}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-medium hover:text-primary transition-colors"
             >
               Bize Ulaşın
             </Link>
-            <Link 
-              href={process.env.NEXT_PUBLIC_APP_URL || "#"} 
+            <Link
+              href={process.env.NEXT_PUBLIC_APP_URL || "#"}
               target="_blank"
               rel="noopener noreferrer"
               className={buttonVariants({variant: "blue"})}
@@ -50,9 +50,6 @@ const Navbar = () => {
               Giriş Yap
             </Link>
           </div>
-
-          <MobileNavbar/>
-
         </MaxWidthWrapper>
     </header>
   )

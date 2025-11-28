@@ -81,9 +81,9 @@ const HomePage = () => {
   return (
     <div className="overflow-x-hidden scrollbar-hide size-full">
       {/* Hero Section */}
-      <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background min-h-screen">
+      <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background sm:min-h-screen">
         <MaxWidthWrapper>
-          <div className="flex flex-col items-center justify-center w-full text-center px-4 pt-16 md:pt-24">
+          <div className="flex flex-col items-center justify-center w-full text-center pt-8 sm:pt-16 md:pt-24">
               <motion.img
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -92,13 +92,13 @@ const HomePage = () => {
                 alt="Montana Logo"
                 width={1920}
                 height={682}
-                className="w-[200px] h-[70px] md:w-[280px] md:h-[100px] mb-8 md:mb-12 object-contain"
+                className="w-[140px] h-[50px] sm:w-[200px] sm:h-[70px] md:w-[280px] md:h-[100px] mb-4 sm:mb-8 md:mb-12 object-contain"
               />
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                className="text-foreground text-center py-4 text-4xl sm:text-5xl md:text-7xl font-bold tracking-normal text-balance !leading-[1.15] w-full font-heading">
+                className="text-foreground text-center py-2 sm:py-4 text-[42px] sm:text-5xl md:text-7xl font-bold tracking-normal text-balance !leading-[1.15] w-full font-heading">
                 Tüm Platformlar <br />
                 <span
                 className="text-transparent bg-gradient-to-r from-[#1E7ED6] via-[#76B3EB] to-[#1E7ED6] bg-clip-text inline-block bg-[length:200%_auto] animate-gradient-x"> Tek Abonelik</span>
@@ -108,7 +108,7 @@ const HomePage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                className="text-white-900 sm:text-lg md:text-xl tracking-tight text-balance px-2 mt-4 text-muted-foreground max-w-2xl mx-auto">
+                className="text-white-900 text-sm sm:text-lg md:text-xl tracking-tight text-balance px-2 mt-1 sm:mt-4 text-muted-foreground sm:max-w-2xl mx-auto">
                 Montana ile üst düzey yayın deneyimini, kesintisiz performansı ve gerçek premium kaliteyi keşfedin. Tek üyelikle her ekranda sorunsuz erişim.
               </motion.p>
 
@@ -117,9 +117,9 @@ const HomePage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-                className="mt-12 mb-4 w-full max-w-lg mx-auto px-4"
+                className="mt-5 sm:mt-12 mb-4 w-full max-w-lg mx-auto"
               >
-                <div className="w-full flex flex-col sm:flex-row items-start gap-3">
+                <div className="w-full flex flex-col sm:flex-row items-center gap-3">
                   <div className="w-full sm:flex-1 flex flex-col">
                     <input
                       type="text"
@@ -147,7 +147,7 @@ const HomePage = () => {
                   </div>
                   <button
                     onClick={handleJoinClick}
-                    className="px-10 py-4 rounded-lg bg-gradient-to-r from-[#1E7ED6] to-[#76B3EB] text-white font-semibold transition-all duration-300 whitespace-nowrap text-base"
+                    className=" px-10 py-3 sm:py-[17px] rounded-lg bg-gradient-to-r from-[#1E7ED6] to-[#76B3EB] text-white font-semibold transition-all duration-300 whitespace-nowrap text-base w-full sm:w-fit"
                   >
                     Bize Katıl
                   </button>
@@ -170,14 +170,14 @@ const HomePage = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-            className="relative z-10"
+            className="relative z-10 w-full flex items-center justify-center"
           >
             <img
               src="/assets/home/hero-3.webp"
               alt="Dashboard"
               width={1330}
               height={480}
-              className="mx-auto max-w-none sm:max-w-full md:max-w-screen-2xl px-2 sm:px-4 md:px-12 w-[600px] sm:w-full h-auto"
+              className="mx-auto max-w-none sm:max-w-full md:max-w-screen-2xl px-2 sm:px-4 md:px-12 w-[540px] sm:w-full h-auto"
             />
           </motion.div>
         </div>
