@@ -81,9 +81,9 @@ const HomePage = () => {
   return (
     <div className="overflow-x-hidden scrollbar-hide size-full">
       {/* Hero Section */}
-      <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background sm:min-h-screen">
+      <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
         <MaxWidthWrapper>
-          <div className="flex flex-col items-center justify-center w-full text-center pt-8 sm:pt-16 md:pt-24">
+          <div className="flex flex-col items-center justify-center w-full text-center pt-8">
               <motion.img
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -92,13 +92,13 @@ const HomePage = () => {
                 alt="Montana Logo"
                 width={1920}
                 height={682}
-                className="w-[140px] h-[50px] sm:w-[200px] sm:h-[70px] md:w-[280px] md:h-[100px] mb-4 sm:mb-8 md:mb-12 object-contain"
+                className="w-[140px] h-[50px] sm:w-[200px] sm:h-[70px] mb-4 object-contain"
               />
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                className="text-foreground text-center py-2 sm:py-4 text-[42px] sm:text-5xl md:text-7xl font-bold tracking-normal text-balance !leading-[1.15] w-full font-heading">
+                className="text-foreground text-center py-2 sm:pt-4 text-[42px] sm:text-5xl md:text-7xl font-bold tracking-normal text-balance !leading-[1.15] w-full font-heading">
                 Tüm Platformlar <br />
                 <span
                 className="text-transparent bg-gradient-to-r from-[#1E7ED6] via-[#76B3EB] to-[#1E7ED6] bg-clip-text inline-block bg-[length:200%_auto] animate-gradient-x"> Tek Abonelik</span>
@@ -108,7 +108,7 @@ const HomePage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                className="text-white-900 text-sm sm:text-lg md:text-xl tracking-tight text-balance px-2 mt-1 sm:mt-4 text-muted-foreground sm:max-w-2xl mx-auto">
+                className="text-white-900 text-sm sm:text-base tracking-tight text-balance  text-muted-foreground sm:max-w-2xl mx-auto">
                 Montana ile üst düzey yayın deneyimini, kesintisiz performansı ve gerçek premium kaliteyi keşfedin. Tek üyelikle her ekranda sorunsuz erişim.
               </motion.p>
 
@@ -117,7 +117,7 @@ const HomePage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-                className="mt-5 sm:mt-12 mb-4 w-full max-w-lg mx-auto"
+                className="mt-5 sm:mt-8 mb-2 w-full max-w-lg mx-auto"
               >
                 <div className="w-full flex flex-col sm:flex-row items-center gap-3">
                   <div className="w-full sm:flex-1 flex flex-col">
@@ -265,7 +265,7 @@ const HomePage = () => {
       </MaxWidthWrapper>
 
       {/* Features Section */}
-      <MaxWidthWrapper className="pt-10 sm:pt-14 md:pt-24 sm:pb-12 md:pb-16">
+      <MaxWidthWrapper className="pt-10 sm:pb-12">
         <AnimationContainer delay={0.1}>
           <div
             id="platforms"
@@ -290,7 +290,7 @@ const HomePage = () => {
       </MaxWidthWrapper>
 
       {/* Reviews Section */}
-      <MaxWidthWrapper className="py-10 pb-4 sm:py-20 md:py-24">
+      <MaxWidthWrapper className="py-10 pb-4 sm:pt-12">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -299,7 +299,7 @@ const HomePage = () => {
         >
           <div
             id="reviews"
-            className="flex flex-col items-center lg:items-center justify-center mb-4 w-full md:py-8 max-w-xl mx-auto scroll-mt-[120px]">
+            className="flex flex-col items-center lg:items-center justify-center mb-4 w-full max-w-xl mx-auto scroll-mt-[120px]">
             <MagicBadge title="Yorumlar"/>
             <h2
               className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
@@ -310,7 +310,7 @@ const HomePage = () => {
             </p>
           </div>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 sm:py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 sm:pt-10">
           {REVIEWS.slice(0, 3).map((review, index) => (
             <motion.div
               key={index}
