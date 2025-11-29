@@ -1,4 +1,5 @@
 import type {Metadata} from "next";
+import Script from "next/script";
 import "@/styles/globals.css";
 import {Providers} from "@/components";
 import {Toaster} from "@/components/ui/sonner";
@@ -118,6 +119,11 @@ export default function RootLayout({
       <Toaster richColors theme="dark" position="top-right"/>
       {children}
     </Providers>
+    <Script
+      src="https://analytics.montanaiptv.app/api/script.js"
+      data-site-id="1"
+      strategy="lazyOnload"
+    />
     </body>
     </html>
   );
