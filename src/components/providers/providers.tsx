@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { IntercomProvider } from "./intercom-provider";
 
 interface Props {
     children: React.ReactNode;
@@ -13,7 +14,9 @@ const Providers = ({ children }: Props) => {
 
     return (
         <QueryClientProvider client={client}>
-            {children}
+            <IntercomProvider>
+                {children}
+            </IntercomProvider>
         </QueryClientProvider>
     )
 };

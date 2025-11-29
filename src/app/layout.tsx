@@ -67,20 +67,11 @@ export const metadata: Metadata = {
     siteName: siteName,
     title: siteName,
     description: siteDescription,
-    images: [
-      {
-        url: `${siteUrl}/assets/home/hero-2.png`,
-        width: 1330,
-        height: 480,
-        alt: "Montana - Tüm Platformlar, Tek Abonelik",
-      },
-    ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: siteName,
     description: siteDescription,
-    images: [`${siteUrl}/assets/home/hero-2.png`],
   },
   robots: {
     index: true,
